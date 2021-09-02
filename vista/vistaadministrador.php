@@ -13,7 +13,8 @@
     <title>Administrador</title>
 
 </head>
-<body>    <div class="sidebar">
+<body>    
+    <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
                 <img src="./img/logo.jpg" class="logofz">
