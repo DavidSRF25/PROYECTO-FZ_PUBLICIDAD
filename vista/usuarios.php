@@ -42,7 +42,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 

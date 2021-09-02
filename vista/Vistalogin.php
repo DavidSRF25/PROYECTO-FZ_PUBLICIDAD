@@ -60,17 +60,25 @@
 
                <form id="RegForm" method="POST">
                    
-                   <input type="text" placeholder="Documento">
-                   <input type="text" placeholder="Nombre">
-                   <input type="text" placeholder="Apellido">
-                   <input type="text" placeholder="Telefono">
+                   <input type="text" placeholder="Documento" name="doc">
+                   <input type="text" placeholder="Nombre" name="nom">
+                   <input type="text" placeholder="Apellido" name="ape">
+                   <input type="email" placeholder="Correo" name="correo">
+                   <input type="text" placeholder="Telefono" name="celular">
 
-                   <input type="email" placeholder="Correo">
-                   <input type="text" placeholder="Direccion">
-                   <input type="text" placeholder="Sexo">
-                   <input type="Date" placeholder="Fecha nacimiento">
-                   <input type="text" placeholder="Usuario">
-                   <input type="password" placeholder="Contraseña">
+                   
+                   <input type="text" placeholder="Direccion" name="direccion">
+                   
+                   <select name="sexo" >
+
+                   <option value="masculino">Seleccione Sexo</option>
+                   <option value="masculino">Masculino</option>
+                   <option value="femenino">Femenino</option>
+
+                   </select>
+                   <input type="Date" placeholder="Fecha nacimiento" name="fechanac">
+                   <input type="text" placeholder="Usuario" name="usuario">
+                   <input type="password" placeholder="Contraseña" name="password">
                    <button type="submit" name="registrarse" class="btn">Registrarse</button>
                </form>
               </div>

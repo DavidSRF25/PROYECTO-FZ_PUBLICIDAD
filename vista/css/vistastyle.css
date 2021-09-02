@@ -146,6 +146,19 @@ body {
     line-height: 50px;
     text-align: center;
 }
+.sidebar form input{
+    border: none; 
+    background:none; 
+    color:#fff;
+    cursor: pointer;
+
+
+}
+.sidebar  form input:hover{
+
+    color: #000;
+    
+}
 
 .sidebar .links_name {
     opacity: 0;
@@ -452,6 +465,7 @@ main {
     position: relative;
     max-width: 750px;
 }
+
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
     display: block;

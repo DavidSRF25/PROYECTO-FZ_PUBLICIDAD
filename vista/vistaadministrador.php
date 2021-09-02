@@ -42,7 +42,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -78,7 +78,15 @@
             
 
                 
+            <li>
+            <a href="#">
+            <form action="login.php" method="post">
                 
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
             </li>
 
         </ul>
@@ -125,7 +133,7 @@
             <h1 >Datos del usuario</h1>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-at"></i> Correo:</li>
+                    <li><i class="icono fas fa-at"></i> Correo:<?php echo $correo ?></li>
                     <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
                     <li><i class="icono fas fa-briefcase"></i> Rol:</li>
                     <li><i class="icono fas fa-venus-mars"></i> Sexo:</li>
@@ -134,7 +142,7 @@
                     
                 <ul class="lista-datos">
                     <li><i class="icono fas fa-id-card"></i>Documento:</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento:</li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <?php echo $fecha?></li>
                     <li><i class="icono fas fa-user-check"></i> Usuario:</li>
                     <li><i class="icono fas fa-share-alt"></i> Estado:</li>
                 </ul>
