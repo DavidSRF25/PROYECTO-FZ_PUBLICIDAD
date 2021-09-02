@@ -1,0 +1,15 @@
+.enviar{
+
+    background: blue;
+    color: white;
+}
+.detalles{
+
+    background: #2697FF;
+    color: white;
+    border: 1px rgb(25, 128, 224) solid;
+    font-size: 14px;
+    padding: 2px;
+
+}
+

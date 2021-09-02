@@ -1,0 +1,64 @@
+.id{
+
+  
+    margin-left: 20%;
+    margin-bottom: 2%;
+    border: none;
+    padding: 2px;
+    width: 72%;
+    height: 7%;
+    
+}
+.descripcion{
+
+  
+    margin-left: 20%;
+    margin-bottom: 2%;
+    border: none;
+    padding: 2px;
+    width: 72%;
+    height: 7%;
+    
+}
+
+.valor{
+
+  
+    margin-left: 20%;
+    margin-bottom: 2%;
+    border: none;
+    padding: 2px;
+    width: 72%;
+    height: 7%;
+}
+
+.fecha{
+
+      
+    margin-left: 20%;
+    margin-bottom: 2%;
+    border: none;
+    padding: 2px;
+    width: 72%;
+    height: 7%;
+    margin-bottom: 2%;
+}
+
+
+li{
+    padding-bottom:5px;
+}
+
+.docen{
+    
+    border: none;
+    margin-left: 19%;
+    margin-bottom: 2%;
+}
+
+.docre{
+    
+    border: none;
+    margin-left: 19%;
+    margin-bottom:2% ;
+}
