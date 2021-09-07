@@ -23,10 +23,15 @@
                    <li><a href="productos.php">Productos</a></li>
                    <li><a href="">Acerca De Nosotros</a></li>
                    <li><a href="">Contacto</a></li>
-                   <li><a href="login.php">Cuenta</a></li>
+                   <li><a href="login.php">Entrar</a>
+
+                    
+                
+                
+                </li>
                </ul>
               </nav>
-              <a href="carrito.html"><img src="images/cart.png" width="30px" height="30px"></a>
+              <a href="carrito.php"><img src="images/cart.png" width="30px" height="30px"></a>
               <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
           </div>
            <div class="row">

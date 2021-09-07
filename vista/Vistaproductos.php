@@ -55,10 +55,11 @@
     
              
            <div class="row">
+          <?php  foreach ($productos as $f) { ?>
                <div class="col-4">
                    
-                   <a href="detalles-productos.php"><img src="images/product-1.jpg"></a>
-                   <h4><a href="detalles-productos.php">Red Printed T-Shirt</a></h4>
+                   <a href="detalles-productos.php"><img src="img/<?php echo $f[7]; ?>" ></a>
+                   <h4><a href="detalles-productos.php"><?php echo $f[1]; ?></a></h4>
                    <div class="rating">
                        <i class="fa fa-star"></i>
                        <i class="fa fa-star"></i>
@@ -66,8 +67,14 @@
                        <i class="fa fa-star"></i>
                        <i class="fa fa-star-o"></i>
                    </div>
-                   <p>$50.00</p>
-               </div> 
+                   <p><?php echo $f[2]?></p>
+               </div>
+               <?php
+
+                    }
+                    ?>
+               
+               <!----  
                <div class="col-4">
                    <img src="images/product-2.jpg">
                    <h4>HRX Sports Shoes</h4>
@@ -207,7 +214,8 @@
                    <p>$75.00</p>
                </div> 
            </div>
-           
+           --->
+           </div>
            <div class="page-btn">
               <span>1</span>
               <span>2</span>
@@ -216,6 +224,7 @@
               <span>&#8594;</span>
           </div>
 </div>
+
     
 <!----------Footer---------------> 
 

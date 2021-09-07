@@ -41,9 +41,38 @@ nav ul{
     display: inline-block;
     list-style-type: none;
 }
+
 nav ul li{
     display: inline-block;
     margin-right: 20px;
+    position: relative;
+}
+#desplegar{
+
+    position:absolute;
+
+
+}
+.navbar #desplegar a{
+
+
+    display: block;
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #desplegar{
+
+display: none;
+
+
+}
+
+.navbar #item:hover #desplegar{
+
+display:block;
+
 }
 .menu-icon{
     display: none;
@@ -292,7 +321,7 @@ small{
     
 nav ul{
     position: absolute;
-    top: 70px;
+    top: 100px;
     left: 0;
     background: #333;
     width: 100%;
@@ -316,6 +345,7 @@ nav ul li a{
         display: block;
         cursor: pointer;
     }
+    
     
 
 }
@@ -589,7 +619,6 @@ form a{
 #RegForm{
     left: 0;
 }
-
 
 
 

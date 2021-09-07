@@ -9,6 +9,7 @@
 
         $combo=$bodega->cargaSelect();
         $com=$bodega->pro();
+        if($_SESSION){
 
 
 
@@ -75,6 +76,12 @@
 
             
           }
+        }else{
+
+          echo '<script type="text/javascript">alert("Usuario no autenticado....");self.location="login.php";</script>';
+
+
+        }
   require_once('vista/vistabodega.php');
 
 

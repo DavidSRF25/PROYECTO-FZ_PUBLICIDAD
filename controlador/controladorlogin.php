@@ -4,12 +4,14 @@
 require_once("modelo/modelousuario.php");
 require_once("modelo/modeloClientes.php");
 
+
 $logeo = new Modelousuario();
 $cliente = new ModeloCli();
 
 
-if(isset($_POST['ingresar'])){
 
+if(isset($_POST['ingresar'])){
+   
 $nombre=$_POST['usu'];
 $password=$_POST['pass'];
 $usu=$logeo->Login($nombre,$password);
@@ -19,7 +21,7 @@ if(count($usu)>0){
 
     foreach($usu as $f){
 
-    session_start();//Iniciamos session
+        session_start();
     $_SESSION['usuario']=$f[1];
     $_SESSION['apellido']=$f[7];
     $_SESSION['Oficio']=$f[3];
@@ -86,7 +88,7 @@ if(isset($_POST['registrarse'])){
 if(isset($_POST['cerrar'])){
 
 
-    session_start();//Iniciamos session
+    session_start();
     if($_SESSION){
     
     session_destroy();

@@ -73,6 +73,16 @@
                 </a>
                 <span class="tooltip">PRODUCCIÓN</span>
             </li>
+            <li>
+            <a href="#">
+            <form action="login.php" method="post">
+                
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
+            </li>
       </ul>
   </div>
   <section class="home-section">

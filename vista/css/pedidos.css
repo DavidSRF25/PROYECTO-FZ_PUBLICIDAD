@@ -88,6 +88,14 @@
   width: calc(100% - 60px);
   left: 60px;
 }
+.sidebar form input{
+  border: none; 
+  background:none; 
+  color:#fff;
+  cursor: pointer;
+
+
+}
 .home-section nav{
   display: flex;
   justify-content: space-between;
