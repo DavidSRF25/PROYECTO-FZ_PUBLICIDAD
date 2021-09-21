@@ -43,6 +43,28 @@ if(count($usu)>0){
 
 }
 
+if(isset($_POST['cerrar'])){
+
+
+    session_start();//Iniciamos session
+    if($_SESSION){
+    
+    session_destroy();
+    echo '<script type="text/javascript">alert("Cerrando Sesion....");self.location="login.php";</script>';
+    
+    
+    
+    }else{
+        echo '<script type="text/javascript">alert("Usuario no autenticado....");self.location="login.php";</script>';
+    
+    
+    }
+    
+    
+    
+    
+    }
+
 
 
 

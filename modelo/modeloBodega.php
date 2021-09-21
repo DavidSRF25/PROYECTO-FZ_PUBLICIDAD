@@ -19,6 +19,20 @@ require_once('Conexion.php');
       return $materiaprima;
     }
 
+    public function ConsultaTodosPDF(){
+        try{
+            $sql="select * from tb_materiaprima"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $materiaprima[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $materiaprima;
+    }
+
     public function entregados(){
         try{
             $sql="select * from tb_entregamaterial"; 

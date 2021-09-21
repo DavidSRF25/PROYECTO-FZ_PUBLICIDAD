@@ -47,7 +47,7 @@
                <span class="tooltip">EDITAR</span>
             </li>
             <li>
-                <a href="bodega.php">
+                <a href="bodegaoperario.php">
                 <i class="fas fa-cube"></i>
                     <span class="links_name">MATERIAL</span>
 

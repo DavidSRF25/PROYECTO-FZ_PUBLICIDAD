@@ -27,30 +27,16 @@
             
     </div>
     <ul class="nav-links">
-        <li>
-                <a href="pedido.php">
+    <li>
+                <a href="pedidoOpe.php">
                     <i class='bx bxs-dashboard'></i>
                     <span class="links_name">PEDIDOS</span>
 
                 </a>
                 <span class="tooltip">PEDIDOS</span>
             </li>
-            <li>
-                <a href="usuario.php">
-                    <i class='bx bxs-user' ></i>
-                    <span class="links_name">USUARIOS</span>
-
-                </a>
-                <span class="tooltip">USUARIOS</span>
-            </li>
-            <li>
-                <a href="clientes.php">
-                <i class="fab fa-black-tie"></i>
-                    <span class="links_name">CLIENTES</span>
-
-                </a>
-            <span class="tooltip">CLIENTES</span>
-            </li>
+           
+          
             <li>
                 <a href="#">
                 <i class="fas fa-user-cog"></i>
@@ -60,29 +46,12 @@
                <span class="tooltip">EDITAR</span>
             </li>
             <li>
-                <a href="bodega.php">
+                <a href="bodegaoperario.php">
                 <i class="fas fa-cube"></i>
-                    <span class="links_name">BODEGA</span>
+                    <span class="links_name">MATERIAL</span>
 
                 </a>
-                <span class="tooltip">BODEGA</span>
-            </li>
-            <li>
-                <a href="procesos.php">
-                <i class="fas fa-hammer"></i>
-                
-                    <span class="links_name">PRODUCCIÓN</span>
-
-                </a>
-                <span class="tooltip">PRODUCCIÓN</span>
-            </li>
-            <li>
-                <a href="IProductos.php">
-                <i class="fas fa-shopping-bag"></i>
-                    <span class="links_name">PRODUCTOS</span>
-
-                </a>
-                <span class="tooltip">PRODUCTOS</span>
+                <span class="tooltip">MATERIAL</span>
             </li>
             <li>
             <a href="#">
@@ -155,13 +124,8 @@
             }
           ?>
             </table>
-
-            
           
           </div>
-          <form method="POST" class="registro" >
-            <input type="submit" class="enviar" name="pdf" value="Generear PDF">
-            </form>
          
         
         </div>

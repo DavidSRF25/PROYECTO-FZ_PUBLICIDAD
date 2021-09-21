@@ -6,7 +6,6 @@ $nombre=$_SESSION['usuario'];
 $foto= $_SESSION['foto'];
 
  require_once('modelo/modeloBodega.php');
- require_once('fpdf/reporteBodega.php');
 
 
         $bodega= new Modelobodega();
@@ -82,40 +81,7 @@ $foto= $_SESSION['foto'];
 
             
           }
-
-
-          if (isset($_POST['pdf'])) {
-            $pdf = new PDF();
-            
-            
-              $datos = $bodega->ConsultaTodosPDF();
-              $pdf->AliasNbPages();
-              $pdf->AddPage('P','Letter');
-              $pdf->SetFont('Times','',12);
-            
-              foreach($datos as $f ){
-                
-                    $pdf->Ln();
-                    $pdf->Cell(20,10,$f[0],1,0,'C',0);
-                    $pdf->Cell(35,10,utf8_decode($f[1]),1,0,'C',0);
-                    $pdf->Cell(40,10,utf8_decode($f[2]),1,0,'C',0);
-                    $pdf->Cell(22,10,$f[3],1,0,'C',0);
-                    $pdf->Cell(50,10,$f[4],1,0,'C',0);
-                    $pdf->Cell(35,10,$f[5],1,0,'C',0);
-                    
-            
-            
-              }
-            
-              
-              $hoy = date('dmy');
-                    $nombre = $hoy . "_Listado_MateriaPrima.pdf" ;
-              $pdf->Output('I',$nombre);// GEnera el PDF
-            
-            
-            
-            }
-  require_once('vista/vistabodega.php');
+  require_once('vista/vistabodegaoperario.php');
 
 
 ?>

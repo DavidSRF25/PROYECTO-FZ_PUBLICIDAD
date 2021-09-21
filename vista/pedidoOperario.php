@@ -48,12 +48,22 @@
 
 
             <li>
-                <a href="bodega.php">
+                <a href="bodegaoperario.php">
                 <i class="fas fa-cube"></i>
                     <span class="links_name">MATERIAL</span>
 
                 </a>
                 <span class="tooltip">MATERIAL</span>
+            </li>
+            <li>
+            <a href="#">
+            <form action="login.php" method="post">
+                
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
             </li>
            
       </ul>
