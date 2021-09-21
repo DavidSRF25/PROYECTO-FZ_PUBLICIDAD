@@ -1,5 +1,6 @@
 <?php 
 
+
 session_start();
 $usu = $_SESSION['usuario'] ;
 $ap = $_SESSION['apellido']; 

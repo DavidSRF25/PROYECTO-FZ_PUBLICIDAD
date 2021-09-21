@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./vista/css/admi.css">
-    <link rel="stylesheet" href="./vista/css/operario.css">
+   
+    
+    <link rel="stylesheet" href="./vista/css/vistastyle.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/banca-en-linea.svg" type="image/x-icon">
@@ -76,41 +77,50 @@
     </script>
  </div>
  
- <div class="contenedor">
-
-   
-
- </div>
-
- <img src="img/logo.jpg" class="imagen">
-
- <section class="contenedor2">
-  <div class="contenido">
-        <ul>
-                    <li><i class="icono fas fa-at"></i> Correo:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
+ <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <h1 class="Bienvenido"></h1>
+                <div class="perfil-usuario-avatar">
+                <img src="img/<?php echo  $fotito ?>" class="imagen">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+                </div>
+             
+            </div>
+        </div>
+                    
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"><?php echo   $usuarion ?></h3>
+               
+            </div>
+            <hr style="color:blue;">
+            <h1 >Datos del usuario</h1>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-at"></i> Correo:<?php echo $Correo ?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono:<?php echo   $tel ?></li>
                     <li><i class="icono fas fa-briefcase"></i> Rol:</li>
-                    <li><i class="icono fas fa-venus-mars"></i> Sexo:</li>
-        </ul>
-       
-  </div>
-  <div class="contenidod">
-
-        <ul>
-                    <li><i class="icono fas fa-id-card"></i> Documento:</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento:</li>
-                    <li><i class="icono fas fa-user-check"></i> Usuario:</li>
+                    <li><i class="icono fas fa-venus-mars"></i> Sexo:<?php echo   $sex ?></li>
+                    
+                </ul>
+                    
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-id-card"></i>Documento:<?php echo $doc?></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <?php echo $fech?></li>
+                    <li><i class="icono fas fa-user-check"></i> Usuario:<?php echo   $usuarion ?></li>
                     <li><i class="icono fas fa-share-alt"></i> Estado:</li>
-        </ul>
-  </div>
-</section>
-
-
-<div class="redes-sociales">
+                </ul>
+            </div>
+            <div class="redes-sociales">
                 <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
                 <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
                 <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
-</div>
+            </div>
+        </div>
+    </section>
 
 
 </body>

@@ -21,7 +21,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-            <img src="img/logo.jpg" class="logofz">
+    <img src="img/logo.pNg" class="logofz"></a>
             <div class="logo_name">FZ PUBLICIDAD</div>
     </div>
     <ul class="nav-links">

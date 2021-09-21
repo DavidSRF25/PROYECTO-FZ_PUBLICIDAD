@@ -8,6 +8,7 @@
    $oficio= $_SESSION['Oficio'];
    $fotito=$_SESSION['foto'];
    $doc=$_SESSION['doc'];
+   $fecha=$_SESSION['fecha'];
 
     $usuario= new Modelousuario();
 

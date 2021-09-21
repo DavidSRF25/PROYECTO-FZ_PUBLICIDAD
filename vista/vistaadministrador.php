@@ -142,17 +142,17 @@
             <h1 >Datos del usuario</h1>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-at"></i> Correo:<?php echo $correo ?></li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
+                    <li><i class="icono fas fa-at"></i> Correo:<?php echo $Correo ?></li>
+                    <li><i class="icono fas fa-phone-alt"></i> Telefono:<?php echo   $tel ?></li>
                     <li><i class="icono fas fa-briefcase"></i> Rol:</li>
-                    <li><i class="icono fas fa-venus-mars"></i> Sexo:</li>
+                    <li><i class="icono fas fa-venus-mars"></i> Sexo:<?php echo   $sex ?></li>
                     
                 </ul>
                     
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-id-card"></i>Documento:</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <?php echo $fecha?></li>
-                    <li><i class="icono fas fa-user-check"></i> Usuario:</li>
+                    <li><i class="icono fas fa-id-card"></i>Documento:<?php echo $doc?></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <?php echo $fech?></li>
+                    <li><i class="icono fas fa-user-check"></i> Usuario:<?php echo   $usuarion ?></li>
                     <li><i class="icono fas fa-share-alt"></i> Estado:</li>
                 </ul>
             </div>

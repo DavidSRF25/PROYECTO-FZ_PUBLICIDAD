@@ -1,6 +1,12 @@
 <?php
+
+session_start();
+
+$nombre=$_SESSION['usuario'];
+$foto= $_SESSION['foto'];
+
  require_once('modelo/modeloBodega.php');
- session_start();
+
 
         $bodega= new Modelobodega();
 
@@ -9,7 +15,6 @@
 
         $combo=$bodega->cargaSelect();
         $com=$bodega->pro();
-        if($_SESSION){
 
 
 
@@ -76,12 +81,6 @@
 
             
           }
-        }else{
-
-          echo '<script type="text/javascript">alert("Usuario no autenticado....");self.location="login.php";</script>';
-
-
-        }
   require_once('vista/vistabodega.php');
 
 

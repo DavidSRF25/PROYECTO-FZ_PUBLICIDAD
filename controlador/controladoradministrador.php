@@ -8,10 +8,11 @@
     $oficio= $_SESSION['Oficio'];
     $fotito=$_SESSION['foto'];
     $doc=$_SESSION['doc'];
-    $correo=$_SESSION['correo'];
-    $fecha=$_SESSION['fecha'];
-    
-
+    $fech=$_SESSION['fecha'];
+    $Correo=$_SESSION['correo'];
+    $tel=$_SESSION['telefono'];
+    $sex=$_SESSION['sexo'];
+    $nombre=$_SESSION['nombre'];
    
    require_once('vista/vistaadministrador.php');
 ?>

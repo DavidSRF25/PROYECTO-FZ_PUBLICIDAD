@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+  $nombre=$_SESSION['usuario'];
+  $foto= $_SESSION['foto'];
+
     require_once('modelo/modeloClientes.php');
 
 
