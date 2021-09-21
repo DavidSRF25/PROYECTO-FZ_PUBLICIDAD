@@ -74,7 +74,7 @@ if(isset($_POST['registrarse'])){
     echo "<script type='text/javascript'>alert('Se Registro Correctamente');</script>";
     }else{
 
-        echo "<script type='text/javascript'>alert('Error al insertar cuenta');</script>";
+        //echo "<script type='text/javascript'>alert('Error al insertar cuenta');</script>";
 
     }
 

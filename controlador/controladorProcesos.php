@@ -1,4 +1,8 @@
 <?php
+ session_start();
+
+ $nombre=$_SESSION['usuario'];
+ $foto= $_SESSION['foto'];
     require_once('modelo/modeloProcesos.php');
 
 
@@ -10,6 +14,6 @@
 
 
 
-    require_once('vista/produccion.php');
+    require_once('vista/Vistaproduccion.php');
 
 ?>

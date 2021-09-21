@@ -2,12 +2,42 @@
 require_once('Conexion.php');
 
 class ModeloPedido{
-    
 
+
+    
+    
+    public function operarios(){
+        try{
+            $sql="select * from tb_usuarios where rol='CORTADOR' OR rol='ESTAMPADOR' OR rol='COSTURERO';"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $pedidosusu[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $pedidosusu;
+    }
+
+    
+    public function PEDIDOS(){
+        try{
+            $sql="select* from tb_pedidosusu;"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $pedidosusu[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $pedidosusu;
+    }
 
     public function ConsultaTodos(){
         try{
-            $sql="select p.ID,p.IDProducto,p.cantidad,p.docCli,p.fechaCompra,pr.estado from tb_Pedidosusu as p  inner join tb_Procesos as pr on p.ID = pr.idpedido where pr.estado='EN PROCESO';"; 
+            $sql="select p.ID,p.IDProducto,p.cantidad,p.fechaCompra,pr.estado from tb_Pedidosusu as p  inner join tb_Procesos as pr on p.ID = pr.idpedido where pr.estado='EN PROCESO';"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
             $conecta->execute(); //ejecuta la consulta
             while($fila3=$conecta->fetch()){

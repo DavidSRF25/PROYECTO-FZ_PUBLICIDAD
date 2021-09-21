@@ -1,0 +1,27 @@
+.idpedido{
+
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+.idoperario{
+
+    width: 80%;
+    margin-left: 10%;
+}
+label{
+
+    margin-left: 10%;
+}
+
+.envio{
+
+    background: rgb(56, 143, 214);
+    color: white;
+    padding: 2px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: none;
+}

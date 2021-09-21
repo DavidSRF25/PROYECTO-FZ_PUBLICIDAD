@@ -1,6 +1,6 @@
 <?php
  require_once('modelo/modeloBodega.php');
-
+ session_start();
 
         $bodega= new Modelobodega();
 

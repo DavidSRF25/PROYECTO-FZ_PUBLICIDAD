@@ -21,7 +21,7 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-            <img src="img/logo.jpg" class="logofz">
+    <img src="img/logo.pNg" class="logofz"></a>
             <div class="logo_name">FZ PUBLICIDAD</div>
     </div>
       <ul class="nav-links">
@@ -67,11 +67,20 @@
             </li>
             <li>
                 <a href="procesos.php">
-                <i class="fas fa-shopping-bag"></i>
+                <i class="fas fa-hammer"></i>
+                
                     <span class="links_name">PRODUCCIÓN</span>
 
                 </a>
                 <span class="tooltip">PRODUCCIÓN</span>
+            </li>
+            <li>
+                <a href="IProductos.php">
+                <i class="fas fa-shopping-bag"></i>
+                    <span class="links_name">PRODUCTOS</span>
+
+                </a>
+                <span class="tooltip">PRODUCTOS</span>
             </li>
             <li>
             <a href="#">

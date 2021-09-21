@@ -26,7 +26,7 @@
             <div class="logo_name">FZ PUBLICIDAD</div>
             
     </div>
-      <ul class="nav-links">
+    <ul class="nav-links">
         <li>
                 <a href="pedido.php">
                     <i class='bx bxs-dashboard'></i>
@@ -44,7 +44,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="datos-clientes.php">
+                <a href="clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -60,7 +60,7 @@
                <span class="tooltip">EDITAR</span>
             </li>
             <li>
-                <a href="#">
+                <a href="bodega.php">
                 <i class="fas fa-cube"></i>
                     <span class="links_name">BODEGA</span>
 
@@ -69,11 +69,30 @@
             </li>
             <li>
                 <a href="procesos.php">
-                <i class="fas fa-shopping-bag"></i>
+                <i class="fas fa-hammer"></i>
+                
                     <span class="links_name">PRODUCCIÓN</span>
 
                 </a>
                 <span class="tooltip">PRODUCCIÓN</span>
+            </li>
+            <li>
+                <a href="IProductos.php">
+                <i class="fas fa-shopping-bag"></i>
+                    <span class="links_name">PRODUCTOS</span>
+
+                </a>
+                <span class="tooltip">PRODUCTOS</span>
+            </li>
+            <li>
+            <a href="#">
+            <form action="login.php" method="post">
+                
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
             </li>
       </ul>
   </div>

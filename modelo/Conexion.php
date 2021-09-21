@@ -6,7 +6,7 @@ class Conexion{
         try{
             $con=new PDO('mysql:host=localhost;dbname=fzpublicidad2','root','3132046059Da%');
             $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-           // echo "Conexion exitosa";
+           // echo "Conexion exitosa"  01022002JesusDavid;
 
 
         }catch(Exception $e){

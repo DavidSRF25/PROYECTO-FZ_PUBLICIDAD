@@ -174,8 +174,8 @@ require_once('Conexion.php');
             try {
                 $sql_up="update tb_materiaprima set cantidad=cantidad-?  where ID=?;";
                 $ps=Conexion::conexionbd()->prepare($sql_up);
-                $ps->bindParam(2,$can);
-                $ps->bindParam(1,$id);
+                $ps->bindParam(1,$can);
+                $ps->bindParam(2,$id);
 
                 if($ps->execute()){
                   $res=1;

@@ -66,12 +66,21 @@
                 <span class="tooltip">BODEGA</span>
             </li>
             <li>
-                <a href="#">
-                <i class="fas fa-shopping-bag"></i>
+                <a href="procesos.php">
+                <i class="fas fa-hammer"></i>
+                
                     <span class="links_name">PRODUCCIÓN</span>
 
                 </a>
                 <span class="tooltip">PRODUCCIÓN</span>
+            </li>
+            <li>
+                <a href="IProductos.php">
+                <i class="fas fa-shopping-bag"></i>
+                    <span class="links_name">PRODUCTOS</span>
+
+                </a>
+                <span class="tooltip">PRODUCTOS</span>
             </li>
             
             

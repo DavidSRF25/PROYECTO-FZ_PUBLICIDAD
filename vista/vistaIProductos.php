@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Clientes</title>
-    <link rel="stylesheet" href="./vista/css/pedidos.css">
-    <link rel="stylesheet" href="./vista/css/usuarios.css">
+    <title>Productos</title>
+    <link rel="stylesheet" href="./vista/css/ped.css">
+    <link rel="stylesheet" href="./vista/css/otros.css">
+    <link rel="stylesheet" href="./vista/css/producto.css">
+    
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,10 +23,12 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-            <img src="img/logo.jpg" class="logofz">
+      <a href="ADMINISTRADOR.php">
+            <img src="img/logo.pNg" class="logofz"></a>
             <div class="logo_name">FZ PUBLICIDAD</div>
+            
     </div>
-    <ul class="nav-links">
+      <ul class="nav-links">
         <li>
                 <a href="pedido.php">
                     <i class='bx bxs-dashboard'></i>
@@ -42,7 +46,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -104,8 +108,8 @@
      
       </div>
       <div class="profile-details">
-        <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Prem Shahi</span>
+        <img src="img/<?php echo $foto ?>" alt="">
+        <span class="admin_name"><?php echo $nombreu ?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
@@ -115,41 +119,40 @@
 
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Clientes</div>
+          <div class="title">PRODUCTOS</div>
           <br>
           <div class="sales-details">
-
-         <?php if($todos){
+          <?php if($productos){
              ?>
           <table>
                <tr>
-            
        
-                   <th>Documento</th>
-                   <th>Nombre</th>
-                   <th>Apellido</th>
-                   <th>Rol</th>
-                   <th>Correo</th>
-                  
+                   <th>ID </th>
+                   <th>Nombre Producto</th>
+                   <th>Valor Unitario</th>
+                   <th>Color</th>
+                   <th>Tamaño</th>
+                   <th>Logo</th>
+                   <th>Cantidad</th>
+                   <th>Foto</th>
+
+
                </tr>
                <tbody>
                <?php 
-              foreach($todos as $f){
+              foreach($productos as $f){
                    ?>
                <tr>
+
                    <td><?php echo $f[0]; ?></td>
                    <td><?php echo $f[1]; ?></td>
                    <td><?php echo $f[2]; ?></td>
                    <td><?php echo $f[3]; ?></td>
                    <td><?php echo $f[4]; ?></td>
-                   <td><form action="" method="POST"> 
-                     <input type="hidden" value="<?php echo $f[0]?>" name="Criterio">
-                     <input type="submit" name="detalles" class="detalles" value="Detalles" >
+                   <td><?php echo $f[5]; ?></td>
+                   <td><?php echo $f[6]; ?></td>
+                   <td><img src="img/<?php echo $f[7]; ?>" alt="" width="60" height="60"></td>
 
-                      </form>  
-                  </td>
-                
-                  
 
 
                </tr>
@@ -164,46 +167,36 @@
          
         
         </div>
+
         <div class="top-sales box">
-          <div class="title">DATOS DEL CLIENTE SELECCIONADO</div>
-          <br>
-         
-        <?php    
-      
-           if(isset($_POST['detalles'])){
-
-        ?>
-
-        
-        <?php 
-            foreach($detalle as $f){
-        ?>
-        
-        <form class="informacion">
-  
-          <label class="label1">Documento: <?php echo $f[0];?></label><br><br>
-          <label class="label2">Nombre: <?php echo $f[1];?></label><br><br>
-          <label class="label3">Apellido: <?php echo $f[2];?></label><br><br>
-          <label class="label4">Correo: <?php echo $f[3];?></label><br><br>
-          <label class="label5">celular: <?php echo $f[4];?></label><br><br>
-          <label class="label6">Sexo: <?php echo $f[5];?></label><br><br>
-          <label class="label7">Dirección: <?php echo $f[6];?></label><br><br>
-          <label class="label9">Fecha Nacimiento: <?php echo $f[7];?></label><br><br>
-     
-          
-        </form>
-      
-        <?php 
-               }
+          <div class="title">REGISTRAR PRODUCTOS</div>
             
-       }
-          
-        ?>
+          <form method="POST" enctype="multipart/form-data">
+           <label>ID</label><br>
+           <input type="text" name="id" class="documento" placeholder="Ingresa ID">
+           <label>Nombre Producto</label><br>
+           <input type="text" name="nombre" class="documento" placeholder="Ingresa nombre">
+           <label>Valor Unitario</label><br>
+           <input type="number" name="valor" class="documento" placeholder="Ingresa valor unitario">
+           <label>Color</label><br>
+           <input type="text" name="color" class="documento" placeholder="Ingresa color">
+           <label>Tamaño</label><br>
+           <input type="text" name="tamaño" class="documento" placeholder="Ingresa tamaño">
+           <label>Logo</label><br>
+           <input type="file" name="logo" class="documento"><br>
+           <label>Cantidad</label><br>
+           <input type="number" name="cantidad" class="documento" placeholder="Ingresa cantidad">
+           <label>Foto</label><br>
+           <input type="file" name="foto" class="documento"><br>
+           <input type="submit" name="enviar" class="registrar" value="Registrar">
+        
+        
+         </form>
+     
+            
 
         </div>
-      </div>
-       
-    
+     
     </div>
 
    

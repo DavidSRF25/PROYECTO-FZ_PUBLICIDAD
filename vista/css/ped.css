@@ -15,6 +15,8 @@
   padding: 0px 5px;
 
 }
+
+
 .sidebar.active{
   width: 100px;
 }
@@ -38,7 +40,7 @@
 
 
 .sidebar .nav-links{
-  margin-top: 28px;
+  margin-top: -18px;
 }
 .sidebar .nav-links li{
   position: relative;
@@ -87,14 +89,6 @@
 .sidebar.active ~ .home-section{
   width: calc(100% - 60px);
   left: 60px;
-}
-.sidebar form input{
-  border: none; 
-  background:none; 
-  color:#fff;
-  cursor: pointer;
-
-
 }
 .home-section nav{
   display: flex;
@@ -390,7 +384,6 @@ nav .profile-details i{
   }
   
 }
-
 @media (max-width: 1150px) {
   .home-content .sales-boxes{
     flex-direction: column;
@@ -433,27 +426,6 @@ nav .profile-details i{
     display: none;
   }
 }
-
-@media (max-height: 800px) {
-  .sidebar .nav-links li{
-    position: relative;
-    list-style: none;
-    height: 40px;
-  }
-  .sidebar .nav-links li a{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    transition: all 0.4s ease;
-    padding: 10;
-
-  }
-
-
-}
-
 .logofz{
 
     width: 70px;
@@ -465,6 +437,8 @@ ul li i{
 
     color: white;
 }
+
+
 .sidebar ul li .tooltip {
     position: absolute;
     left: 122px;
@@ -493,6 +467,7 @@ ul li i{
     opacity: 1;
     top: 50%;
 }
+
 
 .title{
 

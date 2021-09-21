@@ -21,10 +21,10 @@
 <body>
   <div class="sidebar">
     <div class="logo-details">
-            <img src="img/logo.jpg" class="logofz">
+    <img src="img/logo.pNg" class="logofz">
             <div class="logo_name">FZ PUBLICIDAD</div>
     </div>
-      <ul class="nav-links">
+    <ul class="nav-links">
         <li>
                 <a href="pedido.php">
                     <i class='bx bxs-dashboard'></i>
@@ -67,11 +67,30 @@
             </li>
             <li>
                 <a href="procesos.php">
-                <i class="fas fa-shopping-bag"></i>
+                <i class="fas fa-hammer"></i>
+                
                     <span class="links_name">PRODUCCIÓN</span>
 
                 </a>
                 <span class="tooltip">PRODUCCIÓN</span>
+            </li>
+            <li>
+                <a href="IProductos.php">
+                <i class="fas fa-shopping-bag"></i>
+                    <span class="links_name">PRODUCTOS</span>
+
+                </a>
+                <span class="tooltip">PRODUCTOS</span>
+            </li>
+            <li>
+            <a href="#">
+            <form action="login.php" method="post">
+                
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
             </li>
       </ul>
   </div>
@@ -85,8 +104,8 @@
      
       </div>
       <div class="profile-details">
-        <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Prem Shahi</span>
+      <img src="img/<?php echo $foto ?>" alt="">
+      <span class="admin_name"><?php echo $nombre ?></span>
         <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
