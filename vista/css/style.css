@@ -169,6 +169,7 @@ display:block;
 .col-4 img{
     width: 100%;
     border-radius: 20px;
+    height: 280px;
 }
 h4{
     color: #555;
@@ -396,6 +397,31 @@ select:focus{
     background: #4084fa;
     color: #fff;
 }
+.verp{
+
+    border-radius: 12px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+ 
+
+
+}
+.verp:hover{
+    background: #4084fa;
+    color: #fff;
+    cursor: pointer;
+
+
+
+
+}
+
+.precio{
+
+    color: #4084fa;
+    font-size: 2px;
+
+}
 
 
 
@@ -406,6 +432,8 @@ select:focus{
 .single-product .col-2 img{
     padding: 0;
     border-radius: 20px;
+    height: 500px;
+    width: 500px;
 }
 .single-product .col-2{
     padding: 20px;
@@ -449,6 +477,7 @@ input:focus{
 }
 
 
+
 /*-------600 media query---------*/
 
 
@@ -464,6 +493,13 @@ input:focus{
     .single-product h1{
         font-size: 26px;
         line-height: 22px;
+    }
+
+    .single-product .col-2 img{
+        padding: 0;
+        border-radius: 20px;
+        height: 400px;
+        width: 500px;
     }
 }
 

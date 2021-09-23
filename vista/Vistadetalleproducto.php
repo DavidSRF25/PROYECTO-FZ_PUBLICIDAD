@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T-Shirt - RedStore | </title>
+   
+    <title><?php echo $nom2; ?> - FzPublicidad </title>
+
+ 
     <link rel="stylesheet" href="vista/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -40,28 +43,14 @@
 <div class="small-container single-product">
     <div class="row">
         <div class="col-2">
-            <img src="images/gallery-1.jpg" width="100%" id="ProductImg">
-            <div class="small-img-row">
-               <div class="small-img-col">
-                   <img src="images/gallery-1.jpg" class="small-img" width="100%">
-               </div>
-               <div class="small-img-col">
-                   <img src="images/gallery-2.jpg" class="small-img" width="100%">
-               </div>
-               <div class="small-img-col">
-                   <img src="images/gallery-3.jpg" class="small-img" width="100%">
-               </div>
-               <div class="small-img-col">
-                   <img src="images/gallery-4.jpg" class="small-img" width="100%">
-               </div>
-    
-            </div>
+           <img src="img/<?php echo $imagenpro; ?>" width="100%" id="ProductImg" >
+            
             
         </div>
         <div class="col-2">
-            <p>Home / T-Shirt</p>
-            <h1>Red Printed Tshirt by HRX</h1>
-            <h4>$50.00</h4>
+          
+            <h1><?php echo $nom2; ?></h1>
+            <h4>$<?php echo $precioP ?></h4>
             
             <select>
                <option>Seleccione Tamaño</option>
@@ -207,34 +196,7 @@
             } 
     }
     
-//-------------Produc Gallery------------
-    
-    var ProductImg = document.getElementById("ProductImg");
-    
-    var SmallImg = document.getElementsByClassName("small-img");
-       
- 
-        SmallImg[0].onclick = function()
-        {
-            ProductImg.src = SmallImg[0].src;
-        }
-        SmallImg[1].onclick = function()
-        {
-            ProductImg.src = SmallImg[1].src;
-        
-        }
-        SmallImg[2].onclick = function()
-        {
-            ProductImg.src = SmallImg[2].src;
-        
-        }
-        SmallImg[3].onclick = function()
-        {
-            ProductImg.src = SmallImg[3].src;
-        
-        }
 
-  //-------------End Produc Gallery------------  
     
     
     

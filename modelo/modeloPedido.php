@@ -36,23 +36,23 @@ class ModeloPedido{
     }
 
     public function ConsultaTodos(){
-        $pedidosusu=0;
+        $todos=null;
         try{
             $sql="select p.ID,p.IDProducto,p.cantidad,p.fechaCompra,pr.estado from tb_Pedidosusu as p  inner join tb_Procesos as pr on p.ID = pr.idpedido where pr.estado='EN PROCESO';"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
             $conecta->execute(); //ejecuta la consulta
             while($fila3=$conecta->fetch()){
-                $pedidosusu[]=$fila3;
+                $todos[]=$fila3;
             }
        }catch(Exception $e){
            echo "Error en la consulta: ".$e;
        }
-      return $pedidosusu;
+      return $todos;
     }
 
 
     public function finalizados(){
-        $pedidosusu=0;
+        
         try{
             $sql="select  p.ID,p.IDproducto,pr.estado from tb_Pedidosusu as p  inner join tb_Procesos as pr on p.ID = pr.idpedido where pr.estado='FINALIZADO';"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta

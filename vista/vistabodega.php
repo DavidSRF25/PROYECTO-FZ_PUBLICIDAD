@@ -44,7 +44,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -52,7 +52,7 @@
             <span class="tooltip">CLIENTES</span>
             </li>
             <li>
-                <a href="#">
+                <a href="actualizarusu.php">
                 <i class="fas fa-user-cog"></i>
                     <span class="links_name">EDITAR</span>
 
@@ -106,9 +106,12 @@
      
       </div>
       <div class="profile-details">
-        <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Prem Shahi</span>
-        <i class='bx bx-chevron-down' ></i>
+      
+              
+        <img src="img/<?php echo  $fotito ?>" alt="">
+        
+        <span class="admin_name"><?php echo  $usuarion ?></span>
+       
       </div>
     </nav>
 

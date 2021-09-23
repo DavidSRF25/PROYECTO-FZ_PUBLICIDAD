@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./vista/css/vistastyle.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/banca-en-linea.svg" type="image/x-icon">
+    
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
@@ -17,7 +17,7 @@
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <img src="./img/logo.jpg" class="logofz">
+            <img src="img/logo.pNg" class="logofz"></a>
                 <div class="logo_name">FZ PUBLICIDAD</div>
             
             </div>
@@ -50,7 +50,7 @@
             <span class="tooltip">CLIENTES</span>
             </li>
             <li>
-                <a href="#">
+                <a href="actualizarusu.php">
                 <i class="fas fa-user-cog"></i>
                     <span class="links_name">EDITAR</span>
 

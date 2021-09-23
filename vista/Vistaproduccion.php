@@ -42,7 +42,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -50,7 +50,7 @@
             <span class="tooltip">CLIENTES</span>
             </li>
             <li>
-                <a href="#">
+                <a href="actualizarusu.php">
                 <i class="fas fa-user-cog"></i>
                     <span class="links_name">EDITAR</span>
 
@@ -176,9 +176,9 @@
                    <th>ID Pedido</th>
                    <th>ID Entrega Material</th>
                    <th>Estado</th>
-                   <th>Descripcion</th>
+                   
                    <th>Ambiente</th>
-                   <th>Cantidad</th>
+                
                    <th>Fecha Entrega</th>
 
 
@@ -193,9 +193,9 @@
                    <td><?php echo $f[1]; ?></td>
                    <td><?php echo $f[2]; ?></td>
                    <td><?php echo $f[3]; ?></td>
-                   <td><?php echo $f[4]; ?></td>
+                  
                    <td><?php echo $f[5]; ?></td>
-                   <td><?php echo $f[6]; ?></td>
+                  
                    <td><?php echo $f[7]; ?></td>
 
 

@@ -50,7 +50,7 @@
             <span class="tooltip">CLIENTES</span>
             </li>
             <li>
-                <a href="#">
+                <a href="actualizarusu.php">
                 <i class="fas fa-user-cog"></i>
                     <span class="links_name">EDITAR</span>
 

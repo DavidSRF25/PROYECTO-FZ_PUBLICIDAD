@@ -55,19 +55,22 @@
     
              
            <div class="row">
+         
           <?php  foreach ($productos as $f) { ?>
                <div class="col-4">
+              
+                  <img src="img/<?php echo $f[7]; ?>" >
+                   <h4><?php echo $f[1]; ?></h4>
+                 
+                    
+
                    
-                   <a href="detalles-productos.php"><img src="img/<?php echo $f[7]; ?>" ></a>
-                   <h4><a href="detalles-productos.php"><?php echo $f[1]; ?></a></h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p><?php echo $f[2]?></p>
+                   
+                   <p class="precio">$<?php echo $f[2]?></p>
+                   <form action="" method="post">
+                                    <input type="hidden" value="<?php echo $f[0]; ?>" name="criterio">
+                                    <input type="submit" value="Ver Producto" name="ID" class="verp">
+                 </form>
                </div>
                <?php
 

@@ -6,6 +6,9 @@
     <title>Pedidos</title>
     <link rel="stylesheet" href="./vista/css/pedidos.css">
     <link rel="stylesheet" href="./vista/css/otros.css">
+    <link rel="stylesheet" href="./vista/css/ped.css">
+    <link rel="stylesheet" href="./vista/css/otro.css">
+    <link rel="stylesheet" href="./vista/css/nuevo.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,7 +45,7 @@
                 <span class="tooltip">USUARIOS</span>
             </li>
             <li>
-                <a href="clientes.php">
+                <a href="datos-clientes.php">
                 <i class="fab fa-black-tie"></i>
                     <span class="links_name">CLIENTES</span>
 
@@ -50,7 +53,7 @@
             <span class="tooltip">CLIENTES</span>
             </li>
             <li>
-                <a href="#">
+                <a href="actualizarusu.php">
                 <i class="fas fa-user-cog"></i>
                     <span class="links_name">EDITAR</span>
 
@@ -104,16 +107,123 @@
      
       </div>
       <div class="profile-details">
-        <img src="images/profile.jpg" alt="">
-        <span class="admin_name">Prem Shahi</span>
-        <i class='bx bx-chevron-down' ></i>
+      
+              
+        <img src="img/<?php echo  $fotito ?>" alt="">
+        
+        <span class="admin_name"><?php echo  $usuarion ?></span>
+       
       </div>
     </nav>
 
     <div class="home-content">
-     
+    <div class="sales-boxes">
+        
+        <div class="recent-sales box">
+          <div class="title">PEDIDOS CLIENTES</div>
+          <br>
+          <div class="sales-details">
+
+         <?php if($clientes){
+             ?>
+          <table>
+               <tr>
+       
+                   <th>ID </th>
+                   <th>ID Producto</th>
+                   <th>Cantidad</th>
+                   <th>Valor unitario</th>
+                   <th>Valor total</th>
+                   <th>Tamaño</th>
+                   <th>Color</th>
+                   
+                   <th>Fecha compra</th>
+
+               </tr>
+               <tbody>
+               <?php 
+              foreach($clientes as $f){
+                   ?>
+               <tr>
+                   <td><?php echo $f[0]; ?></td>
+                   <td><?php echo $f[1]; ?></td>
+                   <td><?php echo $f[2]; ?></td>
+                   <td><?php echo $f[3]; ?></td>
+                   <td><?php echo $f[4]; ?></td>
+                   <td><?php echo $f[5]; ?></td>
+                   <td><?php echo $f[6]; ?></td>
+                   <td><?php echo $f[7]; ?></td>
+                   <td><?php echo $f[8]; ?></td>
+            
+
+               </tr>
+               </tbody>
+               <?php 
+                 }
+            }
+          ?>
+            </table>
+          
+          </div>
+         
+        
+        </div>
+
+        <div class="top-sales box">
+          <div class="title">ASIGNAR PEDIDO OPERARIO</div>
+          
+            <form method="POST">
+
+            <label>ID Pedido</label>
+            <select name="idpedido" class="idpedido">
+                    <option value="0">Seleccione</option>
+                    <?php if($clientes)
+                    
+                    foreach($clientes as $f){ {
+             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[0]; ?></option>
+                     <?php 
+                 }
+                }
+          ?>
+            </select>
+            <label>ID Entrega Material</label>
+            <select name="idma" class="idoperario">
+                    <option value="0">Seleccione</option>
+                    <?php if($bodega)
+                    
+                    foreach($bodega as $f){ {
+             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>)</option>
+                     <?php 
+                 }
+                }
+          ?>
+
+            </select>
+            <label>ID Operario</label>
+            <select name="idoperario" class="idoperario">
+                    <option value="0">Seleccione</option>
+                    <?php if($operarios)
+                    
+                    foreach($operarios as $f){ {
+             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>)</option>
+                     <?php 
+                 }
+                }
+          ?>
+
+            </select>
+            <input type="submit" name="enviar" class="envio" value="Registrar">
+
+
+
+            </form>
+          
+
+        </div>
+      </div>  
 
       <div class="sales-boxes">
+        
         <div class="recent-sales box">
           <div class="title">PEDIDOS EN PROCESO</div>
           <br>
