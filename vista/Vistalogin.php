@@ -52,22 +52,22 @@
                  </div>
                  
                <form id="LoginForm" method="POST">
-                   <input type="text" placeholder="Usuario" name="usu">
-                   <input type="password" placeholder="Contraseña" name="pass">
+                   <input  class="formulariologin" type="text" placeholder="Usuario" name="usu">
+                   <input class="formulariologin" type="password" placeholder="Contraseña" name="pass">
                    <button type="submit" name="ingresar" class="btn">Login</button>
                    
                </form>
 
                <form id="RegForm" method="POST">
                    
-                   <input type="text" placeholder="Documento" name="doc">
-                   <input type="text" placeholder="Nombre" name="nom">
-                   <input type="text" placeholder="Apellido" name="ape">
-                   <input type="email" placeholder="Correo" name="correo">
-                   <input type="text" placeholder="Telefono" name="celular">
+                   <input class="formulariologin" type="text" placeholder="Documento" name="doc">
+                   <input class="formulariologin" type="text" placeholder="Nombre" name="nom">
+                   <input class="formulariologin" type="text" placeholder="Apellido" name="ape">
+                   <input class="formulariologin" type="email" placeholder="Correo" name="correo">
+                   <input  class="formulariologin"type="text" placeholder="Telefono" name="celular">
 
                    
-                   <input type="text" placeholder="Direccion" name="direccion">
+                   <input  class="formulariologin"type="text" placeholder="Direccion" name="direccion">
                    
                    <select name="sexo" >
 
@@ -76,10 +76,10 @@
                    <option value="femenino">Femenino</option>
 
                    </select>
-                   <input type="Date" placeholder="Fecha nacimiento" name="fechanac">
-                   <input type="text" placeholder="Usuario" name="usuario">
-                   <input type="password" placeholder="Contraseña" name="password">
-                   <button type="submit" name="registrarse" class="btn">Registrarse</button>
+                   <input  class="formulariologin"type="Date" placeholder="Fecha nacimiento" name="fechanac">
+                   <input class="formulariologin" type="text" placeholder="Usuario" name="usuario">
+                   <input class="formulariologin" type="password" placeholder="Contraseña" name="password">
+                   <button  type="submit" name="registrarse" class="btn">Registrarse</button>
                </form>
               </div>
            </div>

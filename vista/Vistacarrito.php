@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,21 +49,48 @@
            <th>Cantidad</th>
            <th>Subtotal</th>
        </tr>
+       <?php
+       $total=0;
+       $subtotal=0;
+       if(isset($_SESSION["carritoo"])){
+               foreach($_SESSION["carritoo"] as $d => $arreglo){
 
+
+            ?>
        <tr>
+       
            <td>
                <div class="cart-info">
-                   <img src="images/buy-1.jpg">
-                   <div>
-                       <p>Red Printed T-Shirt</p>
-                       <small>Precio: $50.00</small><br>
-                       <a href="">Eliminar</a>
-                   </div>
+         
+                <img src="img/<?php echo $arreglo["imagen"] ?>">
+                <div>
+                    <p><?php echo $d ?></p>
+                    <small>Precio: $<?php echo $arreglo["precio"] ?></small><br>
+                    <?php echo "<a href='carrito.php?item=$d'>Eliminar</a>";?>
+                    
+                </div>
+                     
+                <?php $subtotal=$arreglo["cant"] * $arreglo["precio"];?>
+
+         
+                  
+                   
                </div>
+        
            </td>
-           <td><input type="number" value="1"></td>
-           <td>$50.00</td>
+           <td><input   type="number" value="<?php echo $arreglo["cant"] ?>" disabled></td>
+           <td>$<?php echo $subtotal?></td>
+         
        </tr>
+
+       <?php 
+             
+             $total += $arreglo["cant"] * $arreglo["precio"];
+            }
+
+        }
+            ?>
+       <!-- 
        <tr>
            <td>
                <div class="cart-info">
@@ -90,6 +119,8 @@
            <td><input type="number" value="1"></td>
            <td>$75.00</td>
        </tr>
+       -->
+     
    </table>
     
     <div class="total-price">
@@ -98,7 +129,7 @@
           
             <tr>
                 <td>Total</td>
-                <td>$235.00</td>
+                <td>$<?php echo $total ?></td>
             </tr>
             
         </table>
