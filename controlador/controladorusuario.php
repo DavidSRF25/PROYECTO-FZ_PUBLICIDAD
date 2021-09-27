@@ -16,7 +16,7 @@
     $misdatos=$usuario->Uno($doc);
 
  
-  if(isset($_POST['enviar'])){
+  if(isset($_POST['registrarse'])){
     $docu=$_POST['documento'];
     $usu=$_POST['usuario'];
     $pass=$_POST['password'];
@@ -83,7 +83,7 @@
 
       }else{
 
-         echo "<script type='text/javascript'>alert('Error de registro 1');</script>";
+         echo "<script type='text/javascript'>alert('Error de registro ');</script>";
       }
      }
      

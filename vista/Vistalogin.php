@@ -58,7 +58,7 @@
                    
                </form>
 
-               <form id="RegForm" method="POST">
+               <form id="RegForm" method="POST" >
                    
                    <input class="formulariologin" type="text" placeholder="Documento" name="doc">
                    <input class="formulariologin" type="text" placeholder="Nombre" name="nom">
@@ -78,6 +78,7 @@
                    </select>
                    <input  class="formulariologin"type="Date" placeholder="Fecha nacimiento" name="fechanac">
                    <input class="formulariologin" type="text" placeholder="Usuario" name="usuario">
+                   <input class="formulariologin" type="hidden"  name="rol" value="CLIENTE">
                    <input class="formulariologin" type="password" placeholder="Contraseña" name="password">
                    <button  type="submit" name="registrarse" class="btn">Registrarse</button>
                </form>

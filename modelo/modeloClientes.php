@@ -48,6 +48,42 @@
 
     }
 
+    public function Insertarpersonal($doc,$nom,$ape,$correo,$celular,$sexo,$direccion,$fechanac){
+
+        $res=0;
+
+        try {
+             
+            $sql_ins="insert into tb_personal value(?,?,?,?,?,?,?,?)";
+            $ps=Conexion::conexionbd()->prepare($sql_ins);
+            $ps->bindParam(1,$doc);
+            $ps->bindParam(2,$nom);
+            $ps->bindParam(3,$ape);
+            $ps->bindParam(4,$correo);
+            $ps->bindParam(5,$celular);
+            $ps->bindParam(6,$sexo);
+            $ps->bindParam(7,$direccion);
+            $ps->bindParam(8,$fechanac);
+
+            if($ps->execute()){
+
+                $res=1;
+
+
+            }else{
+                $res=0;
+            }
+
+        } catch (Exception $e) {
+            echo "Error al insertar cliente";
+            return $res;
+        }
+
+
+
+
+    }
+
  }
 
 ?>

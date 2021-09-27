@@ -64,7 +64,10 @@
            <input type="hidden" name="imagen" value="<?php echo $imagenpro; ?>">
            <input type="hidden" name="txtPrecio" value="<?php echo $precioP ?>">
             <input class="numerodeta" type="number" value="1" name="cant" min="1" pattern="^[0-9]+">
+           
             <input type="submit" class="btn" value="Añadir al Carrito" name="btnagregar">
+        
+            
             </form>
             
             <h3>Detalles Del Producto <i class="fa fa-indent"></i></h3>

@@ -25,6 +25,16 @@
                    <li><a href="">Acerca de Nosotros</a></li>
                    <li><a href="">Contacto</a></li>
                    <li><a href="login.php">Cuenta</a></li>
+                   <li>
+                   <a href="#">
+            <form action="login.php" method="post">
+                
+                <i class='bx bx-log-out' ></i>
+                    
+                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                </form>
+                </a>
+                   </li>
                </ul>
               </nav>
               <a href="carrito.php"><img src="images/cart.png" width="30px" height="30px"></a>

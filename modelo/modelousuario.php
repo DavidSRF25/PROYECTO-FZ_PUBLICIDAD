@@ -118,7 +118,7 @@ class Modelousuario{
     }   
     
     public function Login($nombre,$pass){
-
+        $datos=null;
         try {
           $log=Conexion::conexionbd()->prepare('call login(?,?)');
           $log->bindParam(1,$nombre);
@@ -133,6 +133,7 @@ class Modelousuario{
         }
           return $datos;
         }
+        
 }
 
 

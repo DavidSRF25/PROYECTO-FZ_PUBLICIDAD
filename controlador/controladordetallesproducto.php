@@ -1,16 +1,24 @@
 
-<?php 
+<?php
 
 require_once("modelo/modeloproductodetalles.php");
 
-session_start();
-
+session_start() ;
 $nom2=$_SESSION['nombreproducto'];
 $imagenpro= $_SESSION['img'];
 $precioP= $_SESSION['preciop'];
 
 
-if(isset($_REQUEST["btnagregar"])){
+
+
+
+
+
+
+
+
+if(isset($_REQUEST["btnagregar"]) ){
+    if($_SESSION['usuario'] ){
     $producto =$_REQUEST["txtProducto"];
     $cantidad =$_REQUEST["cant"];
     $precio = $_REQUEST["txtPrecio"];
@@ -34,10 +42,12 @@ if(isset($_REQUEST["btnagregar"])){
     }
     echo "<script type='text/javascript'>alert('Producto $producto agregado con exito' );</script>";
     header("Location: detalles-productos.php");
-   
-
     
-
+    }else{
+        echo '<script type="text/javascript">alert("Usuario no autenticado....");self.location="login.php";</script>';
+    
+    
+    }
 }
 
 
@@ -45,7 +55,9 @@ if(isset($_REQUEST["btnagregar"])){
 
 
 
+
 require_once('vista/Vistadetalleproducto.php');
+
 
 
 
