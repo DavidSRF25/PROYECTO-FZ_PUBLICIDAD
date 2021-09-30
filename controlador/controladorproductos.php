@@ -17,6 +17,7 @@ $_SESSION['precio']=$f[2];
 $_SESSION['imagen']=$f[7];
 
 
+
 }
 
 if (isset($_POST['ID'])) {
@@ -27,6 +28,7 @@ if (isset($_POST['ID'])) {
         $_SESSION['nombreproducto']=$d[1];
         $_SESSION['img']=$d[7];
         $_SESSION['preciop']=$d[2];
+        $_SESSION['identificador']=$d[0];
         
         
     

@@ -47,6 +47,18 @@ nav ul li{
     margin-right: 20px;
     position: relative;
 }
+nav ul li form input {
+    font-family: 'Poppins', sans-serif;
+    border :none;
+    background: none;
+    text-decoration: none;
+    color: #555;
+    font-size: 17px;
+    cursor: pointer;
+
+
+
+}
 #desplegar{
 
     position:absolute;
@@ -346,6 +358,12 @@ nav ul li a{
         color: #fff;
     }
     
+    nav ul li form input {
+       
+        color: #fff
+    
+    
+    }
 .menu-icon{
         display: block;
         cursor: pointer;
@@ -654,6 +672,14 @@ form select{
     margin: 10px 0;
     padding: 0 10px;
     border: 1px solid #ccc;
+}
+.product-select select{
+    width: 40%;
+    height: 35px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
 }
 form input:focus{
     outline: none;

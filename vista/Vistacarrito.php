@@ -29,11 +29,10 @@
                    <a href="#">
             <form action="login.php" method="post">
                 
-                <i class='bx bx-log-out' ></i>
-                    
-                    <span><input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+        
+                    <input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
                 </form>
-                </a>
+                
                    </li>
                </ul>
               </nav>
@@ -89,13 +88,18 @@
         
            </td>
            <td><input   type="number" value="<?php echo $arreglo["cant"] ?>" disabled></td>
-           <td>$<?php echo $subtotal?></td>
+           <td>$<?php echo $subtotal;
+
+                    $_SESSION["subtotal"]=$subtotal;
+           
+           ?></td>
          
        </tr>
 
        <?php 
              
              $total += $arreglo["cant"] * $arreglo["precio"];
+            $_SESSION["totalc"]=$total;
             }
 
         }
@@ -145,7 +149,10 @@
         </table>
     </div>
     <div class="total-price">
-        <a href="#" class="btn">Pedir &#8594;</a>
+ 
+        <form action="" method="POST">
+        <input type="submit"   class="btn"name="btnpedir" value="Pedir &#8594;" >
+        </form>
     </div>
     
 </div>
@@ -203,7 +210,7 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "220px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"

@@ -21,7 +21,7 @@
                <ul id="MenuItems">
                    <li><a href="index.php">Inicio</a></li>
                    <li><a href="productos.php">Productos</a></li>
-                   <li><a href="">Acerca De Nosotros</a></li>
+                   <li><a href="acercadeno.php">Acerca De Nosotros</a></li>
                    <li><a href="">Contacto</a></li>
                    <li><a href="login.php">Entrar</a>
 

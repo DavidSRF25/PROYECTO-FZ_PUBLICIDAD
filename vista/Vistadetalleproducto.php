@@ -51,19 +51,20 @@
           
             <h1><?php echo $nom2; ?></h1>
             <h4>$<?php echo $precioP ?></h4>
-            
-            <select>
-               <option>Seleccione Tamaño</option>
-               <option>Pequeña</option>
-               <option>Mediana</option>
-               <option>Grande</option>
+            <form action="detalles-productos.php" method="POST" class="product-select">
+            <select  name="size" >
+               <option value="">Seleccione Tamaño</option>
+               <option value="Pequeña">Pequeña</option>
+               <option value="Mediana">Mediana</option>
+               <option value="Grande">Grande</option>
               
            </select>
-            <form action="detalles-productos.php" method="POST">
+            
            <input type="hidden" name="txtProducto" value="<?php echo $nom2; ?>">
            <input type="hidden" name="imagen" value="<?php echo $imagenpro; ?>">
            <input type="hidden" name="txtPrecio" value="<?php echo $precioP ?>">
-            <input class="numerodeta" type="number" value="1" name="cant" min="1" pattern="^[0-9]+">
+           <input type="hidden" name="identificador" value="<?php echo $iden ?>">
+            <input class="numerodeta" type="number" value="1" name="cant" min="1" pattern="^[1-9]+">
            
             <input type="submit" class="btn" value="Añadir al Carrito" name="btnagregar">
         
