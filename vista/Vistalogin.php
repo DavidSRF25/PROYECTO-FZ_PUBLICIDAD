@@ -40,7 +40,7 @@
        <div class="row">
          
           <div class="col-2">
-             <img src="images/image1.png" width="100%">
+             <img src="images/mujerfoto.png" width="100%">
           </div>
           
            <div class="col-2">

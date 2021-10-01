@@ -46,7 +46,7 @@
   
                     move_uploaded_file($_FILES['fo']['tmp_name'],$carpeta.$foto);
   
-                    echo "<script type='text/javascript'>alert('Actualizacion exitosa');</script>";
+                    echo '<script type="text/javascript">alert("Actualizacion exitosa");self.location="actualizarusu.php";</script>';
   
                  }else{
   
@@ -60,7 +60,7 @@
   
                     if($resultado>0){
   
-                       echo "<script type='text/javascript'>alert('Actualizacion sin foto');</script>";
+                       echo "<script type='text/javascript'>alert('Actualizacion sin foto');location.reload(administrador.php);</script>";
   
                     }else{
   
@@ -76,9 +76,8 @@
   
            if($resultado>0){
   
-              echo "<script type='text/javascript'>alert('Actualizacion sin foto');</script>";
-  
-           }else{
+              echo "<script type='text/javascript'>alert('Actualizacion sin foto');location.reload(administrador.php);</script>";
+               
   
               echo "<script type='text/javascript'>alert('Error de actualizacion 3');</script>";
            }
@@ -105,7 +104,7 @@
 
           if($resultado > 0){
 
-            echo "<script type='text/javascript'>alert('Actualizacion exitosa');</script>";
+            echo '<script type="text/javascript">alert("Actualizacion exitosa");self.location="actualizarusu.php";</script>';
           }else {
 
             echo "<script type='text/javascript'>alert('Error actualizacion');</script>";
@@ -117,7 +116,7 @@
 
          if($resultado > 0){
 
-           echo "<script type='text/javascript'>alert('Actualizacion exitosa sin fecha');</script>";
+            echo '<script type="text/javascript">alert("Actualizacion exitosa");self.location="actualizarusu.php";</script>';
          }else {
 
            echo "<script type='text/javascript'>alert('Error actualizacion');</script>";

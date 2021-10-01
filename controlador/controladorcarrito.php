@@ -1,9 +1,13 @@
 <?php  
 require_once("modelo/modelocarrito.php");
+require_once("modelo/modeloPedido.php");
+
+
 
 
 session_start();
 $carro = new  ModeloCarrito();
+$pedi = new ModeloPedido();
    
 
     if($_SESSION['usuario']){
@@ -45,6 +49,11 @@ $carro = new  ModeloCarrito();
 
         if(isset($_REQUEST["btnpedir"])){
             if($_SESSION['carritoo']){
+                $docusu=$_SESSION['doc'];
+                $fechaco= date('ymd');
+                $totalc=$_SESSION["totalc"];
+
+                $pedidou=$carro->InsertarentbPedido($docusu,$totalc, $fechaco);
 
                 foreach($_SESSION["carritoo"] as $d => $arreglo){
 
@@ -56,19 +65,26 @@ $carro = new  ModeloCarrito();
                     $tam= $arreglo["size"];
                     $logo="default.jpg";
                     $color="ROJO";
-                    $fechaco= date('ymd');
+                    
                     $id=$arreglo["identificador"];
                     $subt= $arreglo["precio"] * $arreglo["cant"];
-
-                  
                     
+                    
+                        $uno=$carro->Uno();
 
+                        foreach($uno as $f){
 
+                            $idpedido= $f[0];
+                        }
+
+                        $ped=$carro->InsertarPedido($id,$idpedido,$canti,$preciouni,$subt,$tam,$color,$logo, $fechaco);
+
+                        
+                        
+
+                            
+                            unset($_SESSION["carritoo"]);
                    
-                    $ped=$carro->InsertarPedido($id,$canti,$preciouni,$subt,$tam,$color,$logo, $fechaco);
-                 
-                    
-                    unset($_SESSION["carritoo"]);
      
                     
 
@@ -77,9 +93,9 @@ $carro = new  ModeloCarrito();
 
                 if ($ped) {
 
-                    echo "<script type='text/javascript'>alert(' inserto correctamente ');</script>";
+                    echo "<script type='text/javascript'>alert(' Se registro el pedido ');</script>";
                   } else {
-                    echo "<script type='text/javascript'>alert('Error al insertar');</script>";
+                    echo "<script type='text/javascript'>alert(' Se registro el pedido');</script>";
                   }
 
             

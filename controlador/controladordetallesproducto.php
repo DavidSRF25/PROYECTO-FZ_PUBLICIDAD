@@ -2,6 +2,9 @@
 <?php
 
 require_once("modelo/modeloproductodetalles.php");
+require_once("modelo/modeloPedido.php");
+
+$pedi = new ModeloPedido();
 
 session_start() ;
 $nom2=$_SESSION['nombreproducto'];
@@ -29,6 +32,10 @@ if(isset($_REQUEST["btnagregar"]) ){
         $_SESSION["carritoo"][$producto]["imagen"]=$img; 
         $_SESSION["carritoo"][$producto]["identificador"]=$id; 
         $_SESSION["carritoo"][$producto]["size"]=$tamaño; 
+
+        
+       
+
       
        
 
@@ -40,6 +47,7 @@ if(isset($_REQUEST["btnagregar"]) ){
         $_SESSION["carritoo"][$producto]["imagen"]=$img;   
         $_SESSION["carritoo"][$producto]["identificador"]=$id; 
         $_SESSION["carritoo"][$producto]["size"]=$tamaño; 
+       
     }
     echo "<script type='text/javascript'>alert('Producto $producto agregado con exito' );</script>";
     header("Location: detalles-productos.php");
