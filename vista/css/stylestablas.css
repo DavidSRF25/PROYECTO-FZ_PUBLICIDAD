@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+table{
+    background-color:#afcbfb;
+    text-align: left;
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+ 
+       
+        
+}
+
+th,td{
+    padding: 10px;
+    
+}
+
+thead{
+    background-color:#4084fa;
+    color: white;
+    border-bottom: solid 5px #afcbfb;
+    
+}
+
+tr:nth-child(even){
+    
+    background-color: #ddd;
+    
+}
+
+tr:hover td{
+    
+    background-color: #4084fa;
+    color: white;
+}
+
+td input{
+
+  width: 110px;
+  height: 35px;
+  border:none;
+
+}
+.actualizar{
+ 
+  background-size: cover;
+  cursor: pointer;
+  background-color: #ffc107;
+  width:110px; 
+  height: 35px;
+  color:white;
+}
+.form-register {
+  width: 400px;
+  background: #4D0686;
+  padding: 30px;
+  margin: auto;
+  
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #4D0686;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #BB3DFF;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+ 
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #6C63FF;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+#controls{
+
+  width: 100%;
+  background: #4D0686;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #BB3DFF;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+
+}
+
+#botons{
+  width: 100%;
+  background: #6C63FF;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+
+/*Responsive*/
+
+@media(max-width: 900px){
+   
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td,.table input{
+		display: block;
+		width: 100%;
+                
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+                 
+	}
+        .table{
+            height: 300px;
+            top: 55%;
+            overflow-y:scroll;
+        }
+        .Bienvenido{
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    font-family: 'Permanent Marker', cursive;
+    
+    
+}
+}
+
+
+

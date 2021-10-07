@@ -48,11 +48,11 @@
 
     }
     
-        public function insertar($id,$nombre,$valor,$color,$tama,$logo,$cantidad,$foto){
+        public function insertar($id,$nombre,$valor,$color,$tama,$logo,$cantidad,$foto,$descripcion){
         
             $res=0;
             try {
-                $sql_ins="insert into tb_producto value(?,?,?,?,?,?,?,?)";
+                $sql_ins="insert into tb_producto value(?,?,?,?,?,?,?,?,?)";
                 $ps=Conexion::conexionbd()->prepare($sql_ins);
                 $ps->bindParam(1,$id);
                 $ps->bindParam(2,$nombre);
@@ -62,6 +62,7 @@
                 $ps->bindParam(6,$logo);
                 $ps->bindParam(7,$cantidad);
                 $ps->bindParam(8,$foto);
+                $ps->bindParam(9,$descripcion);
     
                 if($ps->execute()){
                   $res=1;

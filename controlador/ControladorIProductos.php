@@ -23,6 +23,7 @@ $foto = $_SESSION['foto'] ;
           $foto=$_FILES['foto']['name'];
           $tipo=$_FILES['foto']['type'];
           $tam=$_FILES['foto']['size'];
+          $descr=$_POST["descripcion"];
           
     
         $existe=$produ->Uno($id);
@@ -43,7 +44,7 @@ $foto = $_SESSION['foto'] ;
     
                    $carpeta=$_SERVER['DOCUMENT_ROOT'].'/FZ_PUBLICIDAD/img/';
                   
-                   $resultado=$produ->insertar($id,$nombre,$valor,$color,$tamaño,$logo,$cantidad,$foto);
+                   $resultado=$produ->insertar($id,$nombre,$valor,$color,$tamaño,$logo,$cantidad,$foto,$descr);
     
                    if($resultado > 0){
     

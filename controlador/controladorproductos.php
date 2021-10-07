@@ -3,6 +3,10 @@
 require_once("modelo/modeloProductos.php");
 require_once("modelo/modelousuario.php");
 
+session_start();
+if(isset($_SESSION["usuario"])){
+    $usuario=$_SESSION['usuario'];
+}
 
 $produc = new ModeloProductos();
 
@@ -15,6 +19,7 @@ foreach($productos as $f){
 $_SESSION['nombrep']=$f[1];
 $_SESSION['precio']=$f[2];
 $_SESSION['imagen']=$f[7];
+
 
 
 

@@ -187,7 +187,31 @@ class ModeloPedido{
             }
     
             return $res;
-    }    
+
+    }  
+    
+    
+    public function mispedidos($doc){
+        $pedusuario=null;
+         try {
+             $sql_de="select * from tb_pedidos as ped inner join tb_pedidosusu as pedu  on (ped.ID = pedu.IDPedido) inner join  tb_producto as p on (pedu.IDProducto = p.ID) where docCli=?  order by pedu.FechaCompra desc; ";
+             $ps=Conexion::conexionbd()->prepare($sql_de);
+             $ps->bindParam(1,$doc);
+      
+             $ps->execute();
+
+             while($f=$ps->fetch()){
+                 
+                $pedusuario[]=$f;
+
+             }
+         } catch (Exception $e) {
+             echo "Error al eliminar";
+         }
+ 
+         return $pedusuario;
+          
+      }
 }
 
 

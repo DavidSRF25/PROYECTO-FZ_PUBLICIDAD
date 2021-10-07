@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos los Productos</title>
     <link rel="stylesheet" href="vista/css/style.css">
+    <link rel="stylesheet" href="vista/css/stylecontacto.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
@@ -61,43 +62,35 @@
             style="stroke: none; fill:#d4d4d4"></path>
     </svg></div>
     </div>
-<!----------------- title -------------->
 
-<div class="small-container">
-   <div class="row row-2">
-       <h2>Todos los Productos</h2>
-     
-   </div>
-    
-             
-           <div class="row">
-         
-          <?php  foreach ($productos as $f) { ?>
-               <div class="col-4">
-              
-                  <img src="img/<?php echo $f[7]; ?>" >
-                   <h4><?php echo $f[1]; ?></h4>
-                 
-                    
-
-                   
-                   
-                   <p class="precio">$<?php echo $f[2]?></p>
-                   <form action="" method="post">
-                                    <input type="hidden" value="<?php echo $f[0]; ?>" name="criterio">
-                                  
-                                    <input type="submit" value="Ver Producto" name="ID" class="verp">
-                 </form>
-               </div>
-               <?php
-
-                    }
-                    ?>
-               
-               
-           </div>
-          
-</div>
+            <div class="contaiiner">
+            <div class="content">
+            <div class="image-box">
+            <img src="images/contactous.png" alt="">
+            </div>
+            <form action="" method="POST">
+            <div class="topic">Envianos Tu mensaje</div>
+            <div class="input-box">
+                <input type="text" required name="nombre">
+                <label>Ingresa tu nombre</label>
+            </div>
+            <div class="input-box">
+                <input type="text" required name="asunto">
+                <label>Asunto</label>
+            </div>
+            <div class="input-box">
+                <input type="email" required name="email">
+                <label>Ingresa tu Correo</label>
+            </div>
+            <div class="message-box">
+                 <textarea  placeholder="Escribe tu mensaje"name="msg" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="input-box">
+                <input type="submit" value="Enviar Mensaje" name="enviam">
+            </div>
+            </form>
+        </div>
+        </div>
 
     
 <!----------Footer---------------> 
@@ -106,7 +99,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-col1">
-            <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
+               <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
                 <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
                 
             </div>

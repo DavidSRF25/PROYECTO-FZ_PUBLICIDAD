@@ -1,3 +1,4 @@
+<?php  session_start();?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,20 +13,40 @@
 <body>
     <div class="header">
        <div class="container">
-          <div class="navbar">
+       <div class="navbar">
               <div class="logo">
                   <a href="index.php"><img src="images/logo.png" width="125px"></a>
               </div>
               <nav>
-               <ul id="MenuItems">
+              <ul id="MenuItems">
                    <li><a href="index.php">Inicio</a></li>
                    <li><a href="productos.php">Productos</a></li>
-                   <li><a href="">Acerca de</a></li>
-                   <li><a href="">Contacto</a></li>
-                   <li><a href="login.php">Cuenta</a></li>
+                   <li><a href="acerca_nosotros.php">Acerca De Nosotros</a></li>
+                   <li><a href="contacto.php">Contacto</a></li>
+                   <?php if( isset($usuario) ){?>
+                   <li><a href="micuenta.php"> Mi Cuenta</a></li>
+                   <?php }else { ?>
+                   <li><a href="login.php">Entrar</a>
+                   <?php } ?>
+                   <?php if(  isset($usuario)){?>
+                   <li>
+                   <a href="#">
+                    <form action="login.php" method="post">
+                
+        
+                    <input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                    </form>
+                
+                   </li>
+
+                    
+                
+                   <?php } ?>
+                </li>
                </ul>
-              </nav>
+              </nav><?php if( isset($usuario) ){?>
               <a href="carrito.php"><img src="images/cart.png" width="30px" height="30px"></a>
+              <?php } ?>
               <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
           </div>
           
@@ -94,7 +115,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-col1">
-               <h3>Contactanos</h3>
+            <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
                 <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
                 
             </div>

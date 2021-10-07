@@ -8,6 +8,10 @@ require_once("modelo/modeloPedido.php");
 session_start();
 $carro = new  ModeloCarrito();
 $pedi = new ModeloPedido();
+if(isset($_SESSION["usuario"])){
+    $usuario=$_SESSION['usuario'];
+}
+
    
 
     if($_SESSION['usuario']){
@@ -63,8 +67,8 @@ $pedi = new ModeloPedido();
                     
                     $canti= $arreglo["cant"];
                     $tam= $arreglo["size"];
-                    $logo="default.jpg";
-                    $color="ROJO";
+                    $logo=$arreglo["logo"];
+                    $color= $arreglo["favcolor"];
                     
                     $id=$arreglo["identificador"];
                     $subt= $arreglo["precio"] * $arreglo["cant"];

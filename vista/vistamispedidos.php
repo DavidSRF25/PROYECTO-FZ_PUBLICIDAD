@@ -5,19 +5,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos los Productos</title>
+    <title>Mis pedidos</title>
     <link rel="stylesheet" href="vista/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
-
 </head>
 <body>
     <div class="header">
        <div class="container">
-       <div class="navbar">
+          <div class="navbar">
               <div class="logo">
-                  <a href="index.php"><img src="images/logo.png" width="125px"></a>
+                  <a href="index.html"><img src="images/logo.png" width="125px"></a>
               </div>
               <nav>
               <ul id="MenuItems">
@@ -46,60 +45,126 @@
                    <?php } ?>
                 </li>
                </ul>
-              </nav><?php if( isset($usuario) ){?>
+              </nav>
               <a href="carrito.php"><img src="images/cart.png" width="30px" height="30px"></a>
-              <?php } ?>
               <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
           </div>
           
-          
        </div>
-       
        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
         style="height: 100%; width: 100%;">
         <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
             style="stroke: none; fill:#d4d4d4"></path>
     </svg></div>
     </div>
-<!----------------- title -------------->
+       
+       
+<!--------------Cart Items details--------------->
+<div class="small-container cart-page">
+   
+   <table>
+       <tr>
+           <th>Producto</th>
+           <th>Cantidad</th>
+           <th>Fecha Compra</th>
+           <th>Subtotal</th>
+       </tr>
+       <?php
+       $total=0;
+       $subtotal=0;
 
-<div class="small-container">
-   <div class="row row-2">
-       <h2>Todos los Productos</h2>
-     
-   </div>
-    
-             
-           <div class="row">
+       if($mipedido){
+      
+               foreach($mipedido as $m){
+
+
+            ?>
+       <tr>
+       
+           <td>
+               <div class="cart-info">
          
-          <?php  foreach ($productos as $f) { ?>
-               <div class="col-4">
-              
-                  <img src="img/<?php echo $f[7]; ?>" >
-                   <h4><?php echo $f[1]; ?></h4>
-                 
+                <img src="img/<?php  echo $m[21] ?>">
+                <div>
+                    <p style="color:#4084fa;"><?php echo $m[15] ?></p>
+                    <small>Precio: $<?php echo $m[8] ?></small><br>
+
                     
+                    
+                </div>
+                     
+                <?php $subtotal=$m[7] * $m[8];?>
 
+         
+                  
                    
-                   
-                   <p class="precio">$<?php echo $f[2]?></p>
-                   <form action="" method="post">
-                                    <input type="hidden" value="<?php echo $f[0]; ?>" name="criterio">
-                                  
-                                    <input type="submit" value="Ver Producto" name="ID" class="verp">
-                 </form>
                </div>
-               <?php
+        
+           </td>
+           <td><input   type="number" value="<?php echo $m[7] ?>" disabled></td>
+           <td><?php echo  $m[3];?></td>
+           <td>$<?php echo $subtotal;
 
-                    }
-                    ?>
-               
-               
-           </div>
+                    $_SESSION["subtotal"]=$subtotal;
+           
+           ?></td>
+         
+       </tr>
+
+       <?php 
+             
+             
+            }
+
+       }
+            ?>
+       <!-- 
+       <tr>
+           <td>
+               <div class="cart-info">
+                   <img src="images/buy-2.jpg">
+                   <div>
+                       <p>HRX Sports Shoes</p>
+                       <small>Price: $75.00</small><br>
+                       <a href="">Eliminar</a>
+                   </div>
+               </div>
+           </td>
+           <td><input type="number" value="1"></td>
+           <td>$75.00</td>
+       </tr>
+       <tr>
+           <td>
+               <div class="cart-info">
+                   <img src="images/buy-3.jpg">
+                   <div>
+                       <p>HRX Gray Trackpants</p>
+                       <small>Price: $75.00</small><br>
+                       <a href="">Eliminar</a>
+                   </div>
+               </div>
+           </td>
+           <td><input type="number" value="1"></td>
+           <td>$75.00</td>
+       </tr>
+       -->
+     
+   </table>
+    
+    <div class="total-price">
+        <table>
+            
           
+            <tr>
+                
+            </tr>
+            
+        </table>
+    </div>
+   
+    
 </div>
 
-    
 <!----------Footer---------------> 
 
 <div class="footer">
@@ -153,12 +218,13 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "220px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
+    
     
 </script>
 

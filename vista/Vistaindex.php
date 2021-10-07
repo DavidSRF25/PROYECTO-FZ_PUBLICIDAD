@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,20 +19,35 @@
                   <a href="index.php"><img src="images/logo.png" width="125px"></a>
               </div>
               <nav>
-               <ul id="MenuItems">
+              <ul id="MenuItems">
                    <li><a href="index.php">Inicio</a></li>
                    <li><a href="productos.php">Productos</a></li>
-                   <li><a href="acercadeno.php">Acerca De Nosotros</a></li>
-                   <li><a href="">Contacto</a></li>
+                   <li><a href="acerca_nosotros.php">Acerca De Nosotros</a></li>
+                   <li><a href="contacto.php">Contacto</a></li>
+                   <?php if( isset($usuario) ){?>
+                   <li><a href="micuenta.php"> Mi Cuenta</a></li>
+                   <?php }else { ?>
                    <li><a href="login.php">Entrar</a>
+                   <?php } ?>
+                   <?php if(  isset($usuario)){?>
+                   <li>
+                   <a href="#">
+                    <form action="login.php" method="post">
+                
+        
+                    <input  class="cerrarlog" type="submit" name="cerrar" value="Cerrar" ></span>
+                    </form>
+                
+                   </li>
 
                     
                 
-                
+                   <?php } ?>
                 </li>
                </ul>
-              </nav>
+              </nav><?php if( isset($usuario) ){?>
               <a href="carrito.php"><img src="images/cart.png" width="30px" height="30px"></a>
+              <?php } ?>
               <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
           </div>
            <div class="row">
@@ -39,7 +55,7 @@
 
                     <h1>FzPublicidad<br></h1>
                     <p>Success isn’t always about greatness. It’s about consistency. Consistent<br>hard work gains success. Greatness will come.</p>
-                    <a href="#" class="btn">Explar Ahora &#8594;</a>
+                    <a href="productos.php" class="btn">Explar Ahora &#8594;</a>
                 </div>
                 <div class="col-2">
                     <img src="images/local.png" >
@@ -79,157 +95,60 @@
   
   <div class="small-container">
         <h2 class="title">Productos Destacados</h2>
-           <div class="row">
-               <div class="col-4">
+        <div class="row">
+         
+         <?php  foreach ($destacados as $f) { ?>
+              <div class="col-4">
+             
+                 <img src="img/<?php echo $f[7]; ?>" >
+                  <h4><?php echo $f[1]; ?></h4>
+                
                    
-                   <a href="product-details.html"><img src="images/product-1.jpg"></a>
-                   <h4><a href="product-details.html">Red Printed T-Shirt</a></h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$50.00</p>
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-2.jpg">
-                   <h4>HRX Sports Shoes</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$75.00</p>
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-3.jpg">
-                   <h4>HRX Gray Trackpants</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$45.00</p>
-               </div> 
-                <div class="col-4">
-                   <img src="images/product-4.jpg">
-                   <h4>Blue Printed T-Shirt</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$55.00</p>
-               </div> 
-           </div>
+
+                  
+                  
+                  <p class="precio">$<?php echo $f[2]?></p>
+                  <form action="" method="post">
+                                   <input type="hidden" value="<?php echo $f[0]; ?>" name="criterio">
+                                 
+                                   <input type="submit" value="Ver Producto" name="ID" class="verp">
+                </form>
+              </div>
+              <?php
+
+                   }
+                   ?>
+              
+              
+          </div>
         <h2 class="title">Ultimos Productos</h2>
-             <div class="row">
-               <div class="col-4">
-                   <img src="images/product-5.jpg">
-                   <h4>Puma Gray Sports Shoes</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$95.00</p>
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-6.jpg">
-                   <h4>Black Printed T-Shirt</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$55.00</p>
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-7.jpg">
-                   <h4>HRX Set of 3 Socks</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$30.00</p> 
-               </div> 
-                <div class="col-4">
-                   <img src="images/product-8.jpg">
-                   <h4>Black Fossil Watch</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$120.00</p>
-               </div> 
-           </div>
-           <div class="row">
-               <div class="col-4">
-                   <img src="images/product-9.jpg">
-                   <h4>Black Sportx Watch</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$135.00</p> 
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-10.jpg">
-                   <h4>Black HRX Shoes</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$50.00</p>
-               </div> 
-               <div class="col-4">
-                   <img src="images/product-11.jpg">
-                   <h4>Gray Nike Shoes</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-half-o"></i>
-                   </div>
-                   <p>$55.00</p>
-               </div> 
-                <div class="col-4">
-                   <img src="images/product-12.jpg">
-                   <h4>HRX Black Trackpants</h4>
-                   <div class="rating">
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star"></i>
-                       <i class="fa fa-star-o"></i>
-                   </div>
-                   <p>$75.00</p>
-               </div> 
+             
+        <div class="row">
+         
+         <?php  foreach ($ultimospro as $f) { ?>
+              <div class="col-4">
+             
+                 <img src="img/<?php echo $f[7]; ?>" >
+                  <h4><?php echo $f[1]; ?></h4>
+                
+                   
+
+                  
+                  
+                  <p class="precio">$<?php echo $f[2]?></p>
+                  <form action="" method="post">
+                                   <input type="hidden" value="<?php echo $f[0]; ?>" name="criterio">
+                                 
+                                   <input type="submit" value="Ver Producto" name="ID" class="verp">
+                </form>
+              </div>
+              <?php
+
+                   }
+                   ?>
+              
+              
+          </div>
            </div>
        </div>
        
@@ -246,7 +165,7 @@
                <h1>Bolsas Ecologicas Con tu Logo</h1>
                <small>Compra Tu Bolsa Ecologica y personalizala con el logo que tu mas Prefieras</small>
                <br>
-               <a href="https://www.youtube.com/c/EasyTutorialsVideo?sub_confirmation=1" class="btn">Comprar Ahora &#8594;</a>
+               <a href="productos.php" class="btn">Comprar Ahora &#8594;</a>
            </div>
        </div>
        </div>
@@ -260,7 +179,7 @@
        <div class="row">
            <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+                      <p>Los porductos Son de muy buena calidad y siempre son lo que espero</p>
                       <div class="rating">
                            <i class="fa fa-star"></i>
                            <i class="fa fa-star"></i>
@@ -273,7 +192,7 @@
            </div>
             <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+                      <p>Los pedidos lo realizas supremamente rapido , he comprado varios productos y nninguno me ha desepcionado.</p>
                       <div class="rating">
                            <i class="fa fa-star"></i>
                            <i class="fa fa-star"></i>
@@ -286,7 +205,7 @@
            </div>
             <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
+                      <p>excelente productos , me encantan las bolsas ecologicas , ya que ayudan al medio ambiente y reduce la contaminacion , es muy buena opcion y acas encontraras las mejores bolsas </p>
                       <div class="rating">
                            <i class="fa fa-star"></i>
                            <i class="fa fa-star"></i>
@@ -308,7 +227,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-col1">
-               <h3>Contactanos</h3>
+            <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
                 <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
                 
             </div>
