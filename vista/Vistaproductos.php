@@ -118,9 +118,9 @@
                <h3>Datos</h3>
                 <ul>
                     <li>FzPublicidad</li>
-                    <li>Mosquera</li>
-                    <li>Cra97#89</li>
-                    <li>3115897542</li>
+                    <li>Bogotá</li>
+                    <li>Cra. 98a #67-10 </li>
+                    <li>3102391543</li>
                 </ul>
             </div>
             <div class="footer-col4">

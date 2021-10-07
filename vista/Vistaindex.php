@@ -205,7 +205,7 @@
            </div>
             <div class="col-3">
                     <i class="fa fa-quote-left"></i>
-                      <p>excelente productos , me encantan las bolsas ecologicas , ya que ayudan al medio ambiente y reduce la contaminacion , es muy buena opcion y acas encontraras las mejores bolsas </p>
+                      <p> Me encantan las bolsas ecologicas , ya que ayudan al medio ambiente y reduce la contaminacion  </p>
                       <div class="rating">
                            <i class="fa fa-star"></i>
                            <i class="fa fa-star"></i>
@@ -239,9 +239,9 @@
                <h3>Datos</h3>
                 <ul>
                     <li>FzPublicidad</li>
-                    <li>Mosquera</li>
-                    <li>Cra97#89</li>
-                    <li>3115897542</li>
+                    <li>Bogotá</li>
+                    <li>Cra. 98a #67-10 </li>
+                    <li>3102391543</li>
                 </ul>
             </div>
             <div class="footer-col4">

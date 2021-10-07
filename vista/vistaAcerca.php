@@ -175,7 +175,7 @@
             <div class="footer-col3">
                <h3>Datos</h3>
                 <ul>
-                    <li>Fz Publicidad</li>
+                    <li>FzPublicidad</li>
                     <li>Bogotá</li>
                     <li>Cra. 98a #67-10 </li>
                     <li>3102391543</li>

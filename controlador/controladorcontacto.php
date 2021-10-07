@@ -1,6 +1,13 @@
 <?php 
 
 
+session_start();
+
+if(isset($_SESSION["usuario"])){
+    $usuario=$_SESSION['usuario'];
+}
+
+
 if(isset($_POST["enviam"])){
 
 if(!empty($_POST["nombre"])&& !empty($_POST["asunto"])&& !empty($_POST["msg"])&& !empty($_POST["email"])){
