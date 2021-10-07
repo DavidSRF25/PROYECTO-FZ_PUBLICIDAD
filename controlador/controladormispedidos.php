@@ -1,6 +1,7 @@
 <?php 
 
 require_once("modelo/modeloPedido.php");
+
 session_start();
 $docu=$_SESSION['doc'];
 if(isset($_SESSION["usuario"])){
@@ -13,7 +14,6 @@ $pedidocli= new ModeloPedido();
 
 
 $mipedido = $pedidocli ->mispedidos($docu);
-
 
 
 

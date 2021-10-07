@@ -43,6 +43,13 @@ td input{
   border:none;
 
 }
+td select{
+
+  width: 110px;
+  height: 35px;
+  border:none;
+
+}
 .actualizar{
  
   background-size: cover;

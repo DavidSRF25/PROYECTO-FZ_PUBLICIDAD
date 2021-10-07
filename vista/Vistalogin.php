@@ -151,8 +151,8 @@
 <!-------------js for toggle menu-------------->
 
 <script>
-    var MenuItems = document.getElementById("MenuItems");
     
+    var MenuItems = document.getElementById("MenuItems");
     
     MenuItems.style.maxHeight = "0px";
     
@@ -160,13 +160,18 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "250px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
-     
+    
+
+    
+    
+    
+    
 </script>
 <!------------------- form toggle ----------->
     <script>

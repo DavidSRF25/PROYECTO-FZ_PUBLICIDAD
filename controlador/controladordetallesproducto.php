@@ -18,6 +18,11 @@ $nom2=$_SESSION['nombreproducto'];
 $imagenpro= $_SESSION['img'];
 $precioP= $_SESSION['preciop'];
 $iden=$_SESSION['identificador'];
+$s=$_SESSION['sizeet'];
+
+
+
+
 
 
 if(isset($_SESSION["usuario"])){
@@ -37,9 +42,21 @@ if(isset($_REQUEST["btnagregar"]) ){
     $color=$_REQUEST["favcolor"];
     $logo = $_FILES['logo']['name'];
     $tipo = $_FILES['logo']['type'];
-    $tamaño = $_FILES['logo']['size'];
+    $sice = $_FILES['logo']['size'];
     $d=$_SESSION['doc'];
+    $tamaño2= $_REQUEST["medida"];
 
+    if(empty($_REQUEST["medida"])){
+
+        $tamañodef=$tamaño;
+
+
+    }else{
+
+        $tamañodef=$tamaño2;
+
+    }
+    
     if ($logo != null) {
 
       if ($tipo == "image/gif" || $tipo == "image/png" || $tipo == "image/jpeg") {
@@ -83,7 +100,7 @@ if(isset($_REQUEST["btnagregar"]) ){
         $_SESSION["carritoo"][$producto]["precio"]=$precio; 
         $_SESSION["carritoo"][$producto]["imagen"]=$img; 
         $_SESSION["carritoo"][$producto]["identificador"]=$id; 
-        $_SESSION["carritoo"][$producto]["size"]=$tamaño; 
+        $_SESSION["carritoo"][$producto]["size"]=$tamañodef; 
         $_SESSION["carritoo"][$producto]["favcolor"]= $color; 
         $_SESSION["carritoo"][$producto]["logo"]= $logo; 
 
@@ -100,7 +117,7 @@ if(isset($_REQUEST["btnagregar"]) ){
         $_SESSION["carritoo"][$producto]["precio"]=$precio;
         $_SESSION["carritoo"][$producto]["imagen"]=$img;   
         $_SESSION["carritoo"][$producto]["identificador"]=$id; 
-        $_SESSION["carritoo"][$producto]["size"]=$tamaño;
+        $_SESSION["carritoo"][$producto]["size"]=$tamañodef;
         $_SESSION["carritoo"][$producto]["favcolor"]= $color;
         $_SESSION["carritoo"][$producto]["logo"]= $logo;   
        

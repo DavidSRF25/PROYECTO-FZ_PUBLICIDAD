@@ -71,23 +71,45 @@
         <div class="col-2">
           
             <h1><?php echo $nom2; ?></h1>
-            <h4>$<?php echo $precioP ?></h4>
+            <h4 class="Preciod">$<?php echo $precioP ?></h4>
             <form action="detalles-productos.php" method="POST" class="product-select" enctype="multipart/form-data">
               <label><b> Tu logo</b></label> <br><input type="file"  name="logo" class="logodeta" >
-            <select  name="size" >
-               <option value="">Seleccione Tamaño</option>
-               <option value="Pequeña">Pequeña</option>
-               <option value="Mediana">Mediana</option>
-               <option value="Grande">Grande</option>
+              
+            <select   name="size" >
+               <option value="<?php echo $s?>"><?php echo $s?></option>
+               <option value="20 X 20 CM">Alto:20CM X Ancho:20CM</option>
+               <option value="50 X 50 CM">Alto:50CM X Ancho:50CM</option>
+               <option value="65 X 80 CM">Alto:65CM X Ancho:80CM</option>
+              
+               
+              
                
               
            </select>
+           <input  id="otramedi" type="submit" name="otro" value="OTRO">
+
+           <?php 
+
+                if(isset($_REQUEST["otro"])){
+                    ?>
+
+                    <input  id="medida" type="text" name="medida" >
+
+
+              <?php  
+              }
+           
+           
+           ?>
+           
+           
            <div class="color-price">
       <div class="color-option">
         
         <div class="circles">
+            
         <label ><b>Color:</b></label>
-        <input class="colores" type="color"  name="favcolor" value="#4084fa"><br>
+        <input class="colores" type="text"  style="text-transform:uppercase;"  name="favcolor" pattern="[Aa-Zz]" title="No se aceptan numeros"><br>
           
         </div>
       </div>
@@ -168,7 +190,7 @@
         <div class="row">
             <div class="footer-col1">
             <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
-                <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
+            <p>Escribenos y nos contactaremos contigo en el tiempo menos posible. <br> Fzpublicidad@hotmail.com</p>
                 
             </div>
             <div class="footer-col2">
@@ -200,23 +222,9 @@
     
 </div>
 
-<!-- Color selecction-->
 
-<script>
-   let circle = document.querySelector(".color-option");
 
-   circle.addEventListener("click", (e)=>{
-     let target = e.target;
-     if(target.classList.contains("circle")){
-       circle.querySelector(".active").classList.remove("active");
-       target.classList.add("active");
-       document.querySelector(".main-images .active").classList.remove("active");
-       document.querySelector(`.main-images .${target.id}`).classList.add("active");
-        
-     }
-   });
 
-  </script>
 
 
 
@@ -225,6 +233,7 @@
 <script>
     
     var MenuItems = document.getElementById("MenuItems");
+    var otramedida = document.getElementById("otro");
     
     MenuItems.style.maxHeight = "0px";
     
@@ -232,12 +241,19 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "250px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
+
+    otramedida.onclick = verinput;
+    function muestraAlerta(evento) {
+        var tmedida = document.getElementById("medida");
+        tmedida.style.display=" contents";
+    
+  }
     
 
     

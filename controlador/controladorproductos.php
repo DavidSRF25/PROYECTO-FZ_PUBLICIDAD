@@ -19,6 +19,7 @@ foreach($productos as $f){
 $_SESSION['nombrep']=$f[1];
 $_SESSION['precio']=$f[2];
 $_SESSION['imagen']=$f[7];
+$_SESSION['sizeet']=$f[4];
 
 
 

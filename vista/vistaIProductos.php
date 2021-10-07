@@ -188,7 +188,7 @@
            <input type="number" name="cantidad" class="documento" placeholder="Ingresa cantidad">
            <label>Foto</label><br>
            <input type="file" name="foto" class="documento"><br>
-           <textarea name="descripcion"   class="documento"placeholder="Descripcion del producto" cols="30" rows="10"></textarea>
+          
            <input type="submit" name="enviar" class="registrar" value="Registrar">
         
         

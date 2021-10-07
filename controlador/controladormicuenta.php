@@ -2,6 +2,8 @@
 
 
 require_once('modelo/modelomicuenta.php');
+require_once('fpdf/factura.php');
+require_once("modelo/modeloPedido.php");
 
 session_start();
 $documento=$_SESSION['doc'];
@@ -11,6 +13,7 @@ if(isset($_SESSION["usuario"])){
 
 
 $micuenta= new Modelomicuenta();
+$pedidocli= new ModeloPedido();
 
 
 $datosmios= $micuenta->Miusuypass($documento);
@@ -77,6 +80,45 @@ if(isset($_POST["actualizardp"])){
 }
 
 
+$mipedido = $pedidocli ->mispedidos($documento);
+
+
+
+
+if (isset($_POST["PEDIPDF"])) {
+    $pdf = new Factura();
+    
+    
+    $mipedido = $pedidocli ->mispedidos($documento);
+      $pdf->AliasNbPages();
+      $pdf->AddPage('P','Letter');
+      $pdf->SetFont('Times','',12);
+    
+      foreach($mipedido as $f ){
+        $pdf->Ln();
+        $pdf->Cell(20,10,$f[0],1,0,'C',0);
+        $pdf->Cell(45,10,utf8_decode($f[15]),1,0,'C',0);
+        $pdf->Cell(20,10,$f[7],1,0,'C',0);
+        $pdf->Cell(25,10,"$".$f[8],1,0,'C',0);
+        $pdf->Cell(30,10,$f[11],1,0,'C',0);
+        $pdf->Cell(35,10,$f[3],1,0,'C',0);
+        
+        
+        $pdf->Cell(25,10,"$".$f[9],1,0,'C',0);
+        
+            
+    
+    
+      }
+    
+      
+      $hoy = date('dmy');
+            $nombre =$documento."_".$hoy . "_Mis_Pedidos.pdf" ;
+      $pdf->Output('D',$nombre);// GEnera el PDF
+    
+    
+    
+    }
 
 
 

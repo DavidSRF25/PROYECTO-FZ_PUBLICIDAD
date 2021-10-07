@@ -5,6 +5,7 @@ require_once("modelo/modeloPedido.php");
 
 
 
+
 session_start();
 $carro = new  ModeloCarrito();
 $pedi = new ModeloPedido();
@@ -85,10 +86,9 @@ if(isset($_SESSION["usuario"])){
 
                         
                         
-
+                        unset($_SESSION["carritoo"]);
                             
-                            unset($_SESSION["carritoo"]);
-                   
+                            
      
                     
 
@@ -111,8 +111,10 @@ if(isset($_SESSION["usuario"])){
                 
 
             }
-
-
+            
+            
+           
+                   
 
         }
 

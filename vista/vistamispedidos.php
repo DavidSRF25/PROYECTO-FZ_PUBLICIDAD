@@ -164,6 +164,7 @@
    
     
 </div>
+<br><br><br>
 
 <!----------Footer---------------> 
 
@@ -207,7 +208,6 @@
 
 
 <!-------------js for toggle menu-------------->
-
 <script>
     
     var MenuItems = document.getElementById("MenuItems");
@@ -218,12 +218,16 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "220px";
+                MenuItems.style.maxHeight = "250px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
+    
+
+    
+    
     
     
 </script>

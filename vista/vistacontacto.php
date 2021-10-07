@@ -100,7 +100,7 @@
         <div class="row">
             <div class="footer-col1">
                <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
-                <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
+               <p>Escribenos y nos contactaremos contigo en el tiempo menos posible. <br> Fzpublicidad@hotmail.com</p>
                 
             </div>
             <div class="footer-col2">
@@ -146,12 +146,17 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "250px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
+    
+
+    
+    
+    
     
 </script>
 

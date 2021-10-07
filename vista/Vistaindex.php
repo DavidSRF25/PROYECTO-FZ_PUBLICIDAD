@@ -172,53 +172,7 @@
        
    </div>
    
-<!----------testimonial--------------->   
-  
-   <div class="testimonial">
-       <div class="small-container">
-       <div class="row">
-           <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                      <p>Los porductos Son de muy buena calidad y siempre son lo que espero</p>
-                      <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-o"></i>
-                       </div>
-                       <img src="images/user-1.png">
-                       <h3>Sean Parker</h3>
-           </div>
-            <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                      <p>Los pedidos lo realizas supremamente rapido , he comprado varios productos y nninguno me ha desepcionado.</p>
-                      <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-o"></i>
-                       </div>
-                       <img src="images/user-2.png">
-                       <h3>Mike Smith</h3>
-           </div>
-            <div class="col-3">
-                    <i class="fa fa-quote-left"></i>
-                      <p> Me encantan las bolsas ecologicas , ya que ayudan al medio ambiente y reduce la contaminacion  </p>
-                      <div class="rating">
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star"></i>
-                           <i class="fa fa-star-o"></i>
-                       </div>
-                       <img src="images/user-3.png">
-                       <h3>Mabel Joe</h3>
-           </div>
-       </div>
-       </div>
-   </div>
+
 
    
 <!----------Footer---------------> 
@@ -228,7 +182,7 @@
         <div class="row">
             <div class="footer-col1">
             <h3><a href="contacto.php" style="color:white;">Contactanos</a></h3>
-                <p>Escribenos y nos contactaremos contigo en el meno tiempo posible.</p>
+            <p>Escribenos y nos contactaremos contigo en el tiempo menos posible. <br> Fzpublicidad@hotmail.com</p>
                 
             </div>
             <div class="footer-col2">
@@ -274,12 +228,17 @@
     {
         if(MenuItems.style.maxHeight == "0px")
             {
-                MenuItems.style.maxHeight = "200px";
+                MenuItems.style.maxHeight = "250px";
             }else
             {
                 MenuItems.style.maxHeight = "0px"
             } 
     }
+    
+
+    
+    
+    
     
 </script>
 
