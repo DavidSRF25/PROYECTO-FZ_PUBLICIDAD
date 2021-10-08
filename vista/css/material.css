@@ -1,0 +1,55 @@
+.idmaterial{
+
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    margin-bottom: 2%;
+}
+
+.nombre{
+
+    margin-top: 2%;
+}
+
+.docRecibe{
+
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    margin-bottom: 2%;
+}
+
+.descripcion{
+
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    margin-bottom: 2%;
+}
+
+.cantidad{
+    
+
+        width: 80%;
+        margin-left: 10%;
+        border: none;
+        margin-bottom: 2%;
+}
+
+.fecha{
+
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    margin-bottom: 2%;
+}
+
+.registrar{
+
+    width: 80%;
+    margin-left: 10%;
+    border: none;
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+}

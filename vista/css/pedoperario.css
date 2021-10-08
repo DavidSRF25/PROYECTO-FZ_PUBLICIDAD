@@ -1,0 +1,73 @@
+.idpedido{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+.idmaterial{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+.estado{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+.descripcion{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+
+.cantidad{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+.ambiente{
+    width: 85%;
+    margin-left: 8%;
+}
+.fecha{
+
+    width: 85%;
+    margin-left: 8%;
+}
+
+label{
+
+    margin-left: 8%;
+} 
+
+
+.enviar{
+
+    width: 85%;
+    background: cornflowerblue;
+    margin-left: 8%;
+    border: none;
+    margin-top: 5%;
+    padding: 5px;
+}
+
+.procesos{
+
+    background: cornflowerblue;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin-left: 20%;
+}
+table{
+    margin-bottom: 5%;
+}
+.procesos:hover{
+
+    background: rgb(0, 4, 255);
+    color: white;
+}

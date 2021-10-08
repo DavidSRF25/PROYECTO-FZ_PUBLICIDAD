@@ -1,0 +1,40 @@
+
+#contenedor{
+
+    margin-left: 2%;
+}
+
+.controls{
+
+
+    border: none;
+    padding: 5px;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+label{
+
+    margin-left: 10%;
+    
+}
+
+.actualizar{
+
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+    border: none;
+}
+
+.actualizarr{
+
+    background: cornflowerblue;
+    color: white;
+    padding: 5px;
+    border: none;
+    width: 80%;
+    margin-left: 15%;
+}

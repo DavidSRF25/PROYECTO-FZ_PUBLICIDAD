@@ -84,7 +84,7 @@
         public function productosdestacados(){
           $destacados=null;
           try{
-             $sql2=("select * FROM tb_producto  where ValorUnitario<30000  and  ValorUnitario>5000 ORDER BY ValorUnitario DESC LIMIT 4; ");
+             $sql2=("select * FROM tb_producto  where ValorUnitario<=40000  and  ValorUnitario>5000 ORDER BY ValorUnitario DESC LIMIT 4; ");
              $dep=Conexion::conexionbd()->prepare($sql2);
              
       

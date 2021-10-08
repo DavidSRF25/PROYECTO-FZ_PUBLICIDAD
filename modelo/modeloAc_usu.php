@@ -6,7 +6,7 @@
 
 
         public function Uno($criterio){
-            $usuarios=null;
+            $usuario=null;
             try{
                $sql2="select * from tb_usuarios where docusu=? " ;
                $dep=Conexion::conexionbd()->prepare($sql2);
@@ -34,7 +34,7 @@
         }
 
         public function dos($criterio){
-            $usuarios=null;
+            $usuario=null;
             try{
                $sql2="select * from tb_personal where doc=? " ;
                $dep=Conexion::conexionbd()->prepare($sql2);

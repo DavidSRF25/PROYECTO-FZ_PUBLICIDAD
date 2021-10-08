@@ -6,7 +6,7 @@
 
 
     public function Enproceso(){
-      $enproceso=0;
+      $enproceso=null;
         try{
             $sql="select * from tb_procesos where estado='EN PROCESO';"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta

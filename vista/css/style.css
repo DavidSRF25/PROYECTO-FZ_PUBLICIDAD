@@ -111,6 +111,12 @@ display:block;
     width: 100%;
     padding: 50px 0;
 }
+#portadaimagen{
+
+    width: 900px;
+    padding: 50px 0;
+
+}
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
@@ -154,6 +160,7 @@ display:block;
 .col-3 img{
     width: 100%;
     border-radius: 20px;
+    height: 350px;
 }
 /*-------featured product--------------*/
 
@@ -240,9 +247,10 @@ small{
     background: #fff;
 }
 .testimonial .col-3 img{
-    width: 50px;
+    width: 150px;
     margin-top: 20px;
     border-radius: 50%;
+    HEIGHT: 90px;
 }
 .fa.fa-quote-left{
     font-size: 34px;
@@ -287,6 +295,7 @@ small{
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    margin-top: 40px;
 }
 .footer p{
     color: #8a8a8a;

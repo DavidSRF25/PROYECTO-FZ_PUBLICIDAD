@@ -7,6 +7,7 @@
 
 
         public function ConsultaTodos(){
+            $productos=null;
             try{
                 $sql="select * from tb_producto;"; 
                 $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
@@ -42,7 +43,6 @@
         }catch(Exception $e){
            echo"Error en la consulta".$e;
         }
-        
        
         return $producto;
 
@@ -62,7 +62,6 @@
                 $ps->bindParam(6,$logo);
                 $ps->bindParam(7,$cantidad);
                 $ps->bindParam(8,$foto);
-                
     
                 if($ps->execute()){
                   $res=1;
@@ -76,7 +75,32 @@
             return $res;
         }
 
-
+        public function actualizar($id,$nombre,$valor,$color,$tama,$logo,$cantidad,$foto){
+        
+            $res=0;
+            try {
+                $sql_ins="update tb_producto set NombreProducto=?, ValorUnitario=?, Color=?, Tamaño=?, Logo=?, Cantidad=?, imagen=? where ID=?";
+                $ps=Conexion::conexionbd()->prepare($sql_ins);
+                $ps->bindParam(8,$id);
+                $ps->bindParam(1,$nombre);
+                $ps->bindParam(2,$valor);
+                $ps->bindParam(3,$color);
+                $ps->bindParam(4,$tama);
+                $ps->bindParam(5,$logo);
+                $ps->bindParam(6,$cantidad);
+                $ps->bindParam(7,$foto);
+    
+                if($ps->execute()){
+                  $res=1;
+                }else{
+                    $res=0;
+                }
+            } catch (Exception $e) {
+                echo "Error al actualizar";
+            }
+    
+            return $res;
+        }
 
     }
 

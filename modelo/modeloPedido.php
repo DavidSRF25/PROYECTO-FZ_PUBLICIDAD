@@ -19,11 +19,56 @@ class ModeloPedido{
        }
       return $pedidosusu;
     }
+    public function con($criterio){
+        $usuarios=null;
+        try{
+           $sql2="select e.ID,p.IDProducto,p.cantidad,p.valoruni,p.valortotal,p.tamaño,p.color,p.logo,pro.imagen  from tb_pedidos as e 
+           inner join tb_pedidosusu as p on (e.ID = P.IDPedido )
+           inner join tb_producto as pro on (p.IDProducto = pro.ID)
+           where  e.ID=?;" ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$criterio);
+    
 
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $usuarios;
+
+    }
+
+    public function pedidosasignados(){
+        $operario=null;
+        try{
+            $sql="select * from tb_pedidooperario"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $operario[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $operario;
+    }
     
     public function PEDIDOS(){
+        $pedidosusu=null;
         try{
-            $sql="select * from tb_pedidosusu;"; 
+            $sql="select* from tb_pedidos;"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
             $conecta->execute(); //ejecuta la consulta
             while($fila3=$conecta->fetch()){
@@ -52,18 +97,21 @@ class ModeloPedido{
 
 
     public function finalizados(){
-        
+        $finalizados=null;
         try{
-            $sql="select  p.ID,p.IDproducto,pr.estado from tb_Pedidosusu as p  inner join tb_Procesos as pr on p.ID = pr.idpedido where pr.estado='FINALIZADO';"; 
+            $sql="select  p.ID,pr.IDproducto,p.docCli,pr.estado from tb_pedidos as p
+            inner join tb_Procesos as pr on p.ID = pr.idpedido
+            where pr.estado='FINALIZADO';
+            "; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
             $conecta->execute(); //ejecuta la consulta
             while($fila3=$conecta->fetch()){
-                $pedidosusu[]=$fila3;
+                $finalizados[]=$fila3;
             }
        }catch(Exception $e){
            echo "Error en la consulta: ".$e;
        }
-      return $pedidosusu;
+      return $finalizados;
     }
 
 

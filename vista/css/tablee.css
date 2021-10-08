@@ -1,0 +1,45 @@
+table{
+
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+table th{
+
+    padding-right: 5px;
+}
+
+.idpedido{
+
+    border: none;
+}
+
+.idmaterial{
+
+    border: none;
+}
+
+.estado{
+
+    border: none;
+}
+
+.descripcion{
+
+    border: none;
+}
+.ambiente{
+
+    border: none;
+}
+
+.fecha{
+
+    border: none;
+}
+.cantidad{
+
+    border: none;
+}

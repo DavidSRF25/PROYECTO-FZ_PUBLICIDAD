@@ -58,7 +58,7 @@
                     <a href="productos.php" class="btn">Explar Ahora &#8594;</a>
                 </div>
                 <div class="col-2">
-                    <img src="images/local.png" >
+                <img id="portadaimagen" src="images/local.png" >
                 </div>
                
            </div>
@@ -74,17 +74,17 @@
        </div>
        
 <!------------------ featured categories --------------->
-     <div class="categories">
+<div class="categories">
          <div class="small-container">
            <div class="row">
                <div class="col-3">
-                   <img src="images/category-1.jpg">
+                   <img src="images/bolsamujer1.jpg">
                </div> 
                <div class="col-3">
-                  <img src="images/category-2.jpg">
+                  <img src="images/trajecaballero.jpg">
                </div> 
                <div class="col-3">
-                   <img src="images/category-3.jpg">
+                   <img src="images/bolsamujer.jpg">
                </div> 
            </div>
        </div>

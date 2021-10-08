@@ -3,11 +3,153 @@ require_once('Conexion.php');
 
  class Modelobodega{
     
+    public function con($id){
+        $usuarios=null;
+        try{
+           $sql2="select * from tb_materiaprima where  ID=?; " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$id);
+    
+    
 
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $usuarios;
+
+    }
+
+    public function con_dos($id){
+        $usuarios=null;
+        try{
+           $sql2="select * from tb_entregamaterial where  ID=?; " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$id);
+    
+    
+
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $usuarios;
+
+    }
+
+    public function actualizar($ID,$IDProveedor,$Tipo,$Cantidad,$Descripcion,$ValorUnidad){
+        $res=0;
+        try {
+            $sql_up="update tb_materiaprima set IDProveedor=?, Tipo=?, Cantidad=?, Descripcion=?, ValorUnidad=? where ID=?;";
+            $ps=Conexion::conexionbd()->prepare($sql_up);
+            $ps->bindParam(6,$ID);
+            $ps->bindParam(1,$IDProveedor);
+            $ps->bindParam(2,$Tipo);
+            $ps->bindParam(3,$Cantidad);
+            $ps->bindParam(4,$Descripcion);
+            $ps->bindParam(5,$ValorUnidad);
+
+            if($ps->execute()){
+              $res=1;
+            }else{
+                $res=0;
+            }
+        } catch (Exception $e) {
+            echo "Error al actualizar";
+        }
+
+        return $res;
+         
+     }
+
+     public function actualizar_entrega($ID,$IDMaterial,$docentre,$docreci,$Descripcion,$cantidad,$fecha,$idpedido,$idproducto){
+        $res=0;
+        try {
+            $sql_up="update tb_entregamaterial set IDMaterial=?, docEntre=?, docReci=?, descrip=?, cant=?, fechaEn=?, IDPedido=?, IDProducto=? where ID=?;";
+            $ps=Conexion::conexionbd()->prepare($sql_up);
+            $ps->bindParam(9,$ID);
+            $ps->bindParam(1,$IDMaterial);
+            $ps->bindParam(2,$docentre);
+            $ps->bindParam(3,$docreci);
+            $ps->bindParam(4,$Descripcion);
+            $ps->bindParam(5,$cantidad);
+            $ps->bindParam(6,$fecha);
+            $ps->bindParam(7,$idpedido);
+            $ps->bindParam(8,$idproducto);
+
+            if($ps->execute()){
+              $res=1;
+            }else{
+                $res=0;
+            }
+        } catch (Exception $e) {
+            echo "Error al actualizar";
+        }
+
+        return $res;
+         
+     }
+
+     public function proveedores(){
+        $materiaprima=null;
+        try{
+            $sql="select * from tb_proveedor"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $materiaprima[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $materiaprima;
+    }
 
     public function ConsultaTodos(){
+        $materiaprima=null;
         try{
             $sql="select * from tb_materiaprima"; 
+            $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
+            $conecta->execute(); //ejecuta la consulta
+            while($fila3=$conecta->fetch()){
+                $materiaprima[]=$fila3;
+            }
+       }catch(Exception $e){
+           echo "Error en la consulta: ".$e;
+       }
+      return $materiaprima;
+    }
+
+    public function idpedidos(){
+        $materiaprima=null;
+        try{
+            $sql="select * from tb_pedidos"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
             $conecta->execute(); //ejecuta la consulta
             while($fila3=$conecta->fetch()){
@@ -20,6 +162,7 @@ require_once('Conexion.php');
     }
 
     public function ConsultaTodosPDF(){
+        $materiaprima=null;
         try{
             $sql="select * from tb_materiaprima"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
@@ -33,7 +176,68 @@ require_once('Conexion.php');
       return $materiaprima;
     }
 
+    public function observacion($idpedido,$documentooperario){
+        $observacion=null;
+        try{
+           $sql2="select * from tb_pedidooperario where idpedido=?  and idoperario=? " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$idpedido);
+           $dep->bindParam(2,$documentooperario);
+    
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $observacion[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $observacion;
+
+    }
+ 
+    public function entre($id){
+        $usuarios=null;
+        try{
+           $sql2="select * from tb_entregamaterial where  ID=?; " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$id);
+    
+    
+
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $usuarios;
+
+    }
+
+
     public function entregados(){
+        $materiaprima=null;
         try{
             $sql="select * from tb_entregamaterial"; 
             $conecta=Conexion::conexionbd()->prepare($sql); //preparar consulta
@@ -73,16 +277,24 @@ require_once('Conexion.php');
         return $res;
 }    
 
-    public function cargaSelect(){
-       
-    $empleado=null;
+  
+    public function cargaSelect($id){
+        $usuarios=null;
         try{
-           $sql4="select docusu,rol from tb_usuarios where rol='COSTURERO' or rol='CORTADOR' or rol='ESTAMPADOR' or rol='ADMINISTRADOR' ";
-           $conecta=Conexion::conexionbd()->prepare($sql4);
-           $conecta->execute();
-           while($f = $conecta->fetch()){
+           $sql2="select docusu,rol from tb_usuarios where rol='COSTURERO' or rol='CORTADOR' or rol='ESTAMPADOR' or rol='ADMINISTRADOR' and docusu !=? " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$id);
+    
+    
 
-            $empleado[]=$f;
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
 
 
            }
@@ -92,9 +304,40 @@ require_once('Conexion.php');
            echo"Error en la consulta".$e;
         }
        
-        return $empleado;
+        return $usuarios;
 
     }
+
+    public function personal($id){
+        $usuarios=null;
+        try{
+           $sql2="select * from tb_usuarios where  docusu=?; " ;
+           $dep=Conexion::conexionbd()->prepare($sql2);
+           $dep->bindParam(1,$id);
+    
+    
+
+
+           $dep->execute();
+
+           
+
+           while($f = $dep->fetch()){
+
+            $usuarios[]=$f;
+
+
+           }
+
+  
+        }catch(Exception $e){
+           echo"Error en la consulta".$e;
+        }
+       
+        return $usuarios;
+
+    }
+
     
     public function pro(){
        
@@ -124,11 +367,11 @@ require_once('Conexion.php');
 
 
 
-  public function insertarentre($IDProveedor,$docentre,$docrec,$Descripcion,$cantidad,$fecha){
+  public function insertarentre($IDProveedor,$docentre,$docrec,$Descripcion,$cantidad,$fecha,$idpedido,$idproducto){
         
-    $res=0;
+    $res=0;  
     try {
-        $sql_ins="insert into tb_entregamaterial (IDMaterial, docEntre, docReci, descrip, cant, fechaEn) value(?,?,?,?,?,?)";
+        $sql_ins="insert into tb_entregamaterial (IDMaterial, docEntre, docReci, descrip, cant, fechaEn, IDPedido, IDProducto) value(?,?,?,?,?,?,?,?)";
         $ps=Conexion::conexionbd()->prepare($sql_ins);
         $ps->bindParam(1,$IDProveedor);
         $ps->bindParam(2,$docentre);
@@ -136,6 +379,8 @@ require_once('Conexion.php');
         $ps->bindParam(4,$Descripcion);
         $ps->bindParam(5,$cantidad);
         $ps->bindParam(6,$fecha);
+        $ps->bindParam(7,$idpedido);
+        $ps->bindParam(8,$idproducto);
 
         if($ps->execute()){
           $res=1;
@@ -204,50 +449,58 @@ require_once('Conexion.php');
              
          }
         
-         public function eliminar($cod){
+         public function recuento($id,$can){
             $res=0;
             try {
-                $sql_de="delete from departamento where CODIGO_DEPART=?";
-                $ps=Conexion::conexionbd()->prepare($sql_de);
-                $ps->bindParam(1,$cod);
-         
+                $sql_up="update tb_materiaprima set cantidad=cantidad+?  where ID=?;";
+                $ps=Conexion::conexionbd()->prepare($sql_up);
+                $ps->bindParam(2,$id);
+                $ps->bindParam(1,$can);
                 
+
                 if($ps->execute()){
                   $res=1;
                 }else{
                     $res=0;
                 }
             } catch (Exception $e) {
-                echo "Error al eliminar";
+                echo "Error al actualizar";
             }
     
             return $res;
              
          }
-         
-         public function consul($cod){
-           $dep=null;
-            try {
-                $sql_de="select departamento from empleado as e inner join departamento as d on (e.departamento=d.CODIGO_DEPART) where e.departamento=?";
-                $ps=Conexion::conexionbd()->prepare($sql_de);
-                $ps->bindParam(1,$cod);
-         
-                $ps->execute();
-
-                while($f=$ps->fetch()){
-                    
-                    $dep[]=$f;
-
-                }
-            } catch (Exception $e) {
-                echo "Error al eliminar";
-            }
-    
-            return $dep;
-             
-         }
-         
         
+         
+         public function cantidamateria($id){
+            $usuarios=null;
+            try{
+               $sql2="select * from tb_materiaprima where ID=?" ;
+               $dep=Conexion::conexionbd()->prepare($sql2);
+               $dep->bindParam(1,$id);
+        
+        
+    
+    
+               $dep->execute();
+    
+               
+    
+               while($f = $dep->fetch()){
+    
+                $usuarios[]=$f;
+    
+    
+               }
+    
+      
+            }catch(Exception $e){
+               echo"Error en la consulta".$e;
+            }
+           
+            return $usuarios;
+    
+        }
       
 }
 

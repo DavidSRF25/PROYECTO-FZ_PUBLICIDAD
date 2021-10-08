@@ -1,25 +1,59 @@
 <?php
 
-session_start();//Iniciamos session
-  $usuarion= $_SESSION['usuario'];
-   $ape=$_SESSION['apellido'];
-   $oficio= $_SESSION['Oficio'];
-   $fotito=$_SESSION['foto'];
-   $doc=$_SESSION['doc'];
-   $fecha=$_SESSION['fecha'];
+session_start();
 
- require_once('modelo/modeloBodega.php');
+$nombre=$_SESSION['usuario'];
+$foto= $_SESSION['foto'];
+$doc=$_SESSION['doc'];
  require_once('fpdf/reporteBodega.php');
+ require_once('modelo/modeloBodega.php');
 
 
         $bodega= new Modelobodega();
 
         $datos=$bodega->ConsultaTodos();
         $entre=$bodega->entregados();
-
-        $combo=$bodega->cargaSelect();
+        $personal=$bodega->personal($doc);
+        $combo=$bodega->cargaSelect($doc);
         $com=$bodega->pro();
+        $pedido=$bodega->idpedidos();
+        $proveedor=$bodega->proveedores();
 
+        if(isset($_POST['actualizar'])){ 
+          $criterio=$_POST['criterio'];
+          $uno=$bodega->con($criterio);
+        }
+
+        if(isset($_POST['actualiza'])){ 
+          $criterio=$_POST['criterioo'];
+          $dos=$bodega->con_dos($criterio);
+        }
+
+        if(isset($_POST['actualizarr'])){
+          $idd=$_POST['idd'];
+          $provee=$_POST['proveedorr'];
+          $ti=$_POST['tipoo'];
+          $can=$_POST['cantidadd'];
+          $descri=$_POST['descripcionn'];
+          $val=$_POST['valorr'];
+
+        
+       
+            $materia=$bodega->actualizar($idd,$provee,$ti,$can,$descri,$val);
+         
+ 
+            if($materia>0){
+
+               echo "<script type='text/javascript'>alert('Acualización exitosa');self.location='bodega.php';</script>";
+            }else{
+
+              echo "<script type='text/javascript'>alert('Error de actualización');self.location='bodega.php';</script>";
+           }
+        }
+
+
+
+      
 
 
         if(isset($_POST['enviar'])){
@@ -35,7 +69,7 @@ session_start();//Iniciamos session
 
             if($existe){ 
 
-              echo "<script type='text/javascript'>alert('Error, registro existente');</script>";
+              echo "<script type='text/javascript'>alert('Error, registro existente');self.location='bodega.php';</script>";
           
            
             }else{
@@ -45,15 +79,162 @@ session_start();//Iniciamos session
    
               if($materia>0){
 
-                 echo "<script type='text/javascript'>alert('Registro exitoso');</script>";
+                 echo "<script type='text/javascript'>alert('Registro exitoso');self.location='bodega.php';</script>";
               }else{
 
-                echo "<script type='text/javascript'>alert('Error de registro');</script>";
+                echo "<script type='text/javascript'>alert('Error de registro');self.location='bodega.php';</script>";
              }
           }
 
 
 
+        }
+        
+        if(isset($_POST['actua'])){
+
+          $id=$_POST['id_m'];
+          $idm=$_POST['id_material'];
+          $doce=$_POST['documento_entrega'];
+          $docr=$_POST['documento_recibe'];
+          $idpedido=$_POST['idpedidoo'];
+          $idproducto=$_POST['idproductoo'];
+          $de=$_POST['descripcionn'];
+          $can=$_POST['canti'];
+          $fecha=$_POST['fecha'];
+          $fe=$_POST['fechaa'];
+
+          $result=$bodega->cantidamateria($idm);
+
+          foreach($result as $f){
+
+              $cantidad= $f[3];
+          }
+
+          if($can > 0 && $fe > 0){ 
+
+              $operacion=$bodega->entre($id);
+
+              foreach($operacion as $f){
+
+                $cnt= $f[5];
+              }
+              
+              if($can > $cnt){ 
+
+                    $resta= $can - $cnt;
+
+                    if($resta <= $cantidad){  
+
+                        $entrega=$bodega->actualizar_entrega($id,$idm,$doce,$docr,$de,$can,$fe,$idpedido,$idproducto);
+
+                        $descuento=$bodega->descuento($resta,$idm);
+
+                        if($entrega > 0){
+
+                          echo "<script type='text/javascript'>alert('Actualización exitosa');self.location='bodega.php';</script>";
+                          
+                        }else{
+
+                          echo "<script type='text/javascript'>alert('Error de actualización');self.location='bodega.php';</script>";
+                        }
+
+                    }else{
+
+                      echo "<script type='text/javascript'>alert('Error, la cantidad supera a lo que tenemos en bodega');self.location='bodega.php';</script>";
+                    }
+
+              }else if($can < $cnt){
+
+                        $resta=$cnt - $can;
+                        
+                        $reenvio=$bodega->recuento($idm,$resta);
+
+                        $entrega=$bodega->actualizar_entrega($id,$idm,$doce,$docr,$de,$can,$fe,$idpedido,$idproducto);
+
+                        $descuento=$bodega->descuento($resta,$idm);
+
+                        if($entrega > 0){
+
+                          echo "<script type='text/javascript'>alert('Actualización exitosa');self.location='bodega.php';</script>";
+                          
+                        }else{
+
+                          echo "<script type='text/javascript'>alert('Error de actualización');self.location='bodega.php';</script>";
+                        }
+
+              }else{
+
+                  echo "<script type='text/javascript'>alert('Error, la cantidad supera a lo que tenemos en bodega');self.location='bodega.php';</script>";
+                }
+
+              
+
+          }else if($can > 0 ){ 
+         
+                  $operacion=$bodega->entre($id);
+
+                    foreach($operacion as $f){
+
+                      $cnt= $f[5];
+                    }
+                    
+                    if($can > $cnt){ 
+
+                          $resta= $can - $cnt;
+
+                          if($resta <= $cantidad){  
+
+                              $entrega=$bodega->actualizar_entrega($id,$idm,$doce,$docr,$de,$can,$fecha,$idpedido,$idproducto);
+
+                              $descuento=$bodega->descuento($resta,$idm);
+
+                              if($entrega > 0){
+
+                                echo "<script type='text/javascript'>alert('Actualización exitosa');self.location='bodega.php';</script>";
+                                
+                              }else{
+
+                                echo "<script type='text/javascript'>alert('Error de actualización');self.location='bodega.php';</script>";
+                              }
+
+                          }else{
+
+                            echo "<script type='text/javascript'>alert('Error, la cantidad supera a lo que tenemos en bodega 2');self.location='bodega.php';</script>";
+                          }
+
+                    }else if($can <= $cnt && $can > 0){
+
+                              $resta=$cnt - $can;
+                              
+                              $reenvio=$bodega->recuento($idm,$resta);
+
+
+                              $entrega=$bodega->actualizar_entrega($id,$idm,$doce,$docr,$de,$can,$fecha,$idpedido,$idproducto);
+
+                              if($entrega > 0){
+
+                                echo "<script type='text/javascript'>alert('Actualización exitosa');self.location='bodega.php';</script>";
+                                
+                              }else{
+
+                                echo "<script type='text/javascript'>alert('Error de actualización');self.location='bodega.php';</script>";
+                              }
+
+                    }else{
+
+                        echo "<script type='text/javascript'>alert('Error, la cantidad supera a lo que tenemos en bodega 3');self.location='bodega.php';</script>";
+                    }
+
+          }else{
+
+            echo "<script type='text/javascript'>alert('Error, la cantidad ingresada no es valida');self.location='bodega.php';</script>";
+
+          }
+          
+          
+          
+          
+            
         }
 
 
@@ -62,29 +243,44 @@ session_start();//Iniciamos session
           $idm=$_POST['idmaterial'];
           $doce=$_POST['docen'];
           $docr=$_POST['docre'];
+          $idproducto=$_POST['idproducto'];
+          $idpedido=$_POST['idpedido'];
           $de=$_POST['descripcion'];
           $can=$_POST['cantidad'];
           $fe=$_POST['fechaen'];
 
+          $result=$bodega->cantidamateria($idm);
 
+          foreach($result as $f){
+
+              $cantidad= $f[3];
+          }
+
+          if($can > 0 &&  $can <= $cantidad){ 
          
 
-              $entrega=$bodega->insertarentre($idm,$doce,$docr,$de,$can,$fe);
+              $entrega=$bodega->insertarentre($idm,$doce,$docr,$de,$can,$fe,$idpedido,$idproducto);
 
-              $descuento=$bodega->descuento($can,$idm);
+              
 
               if($entrega >0){
 
-                echo "<script type='text/javascript'>alert('Registro exitoso');</script>";
+                $descuento=$bodega->descuento($can,$idm);
+
+                echo "<script type='text/javascript'>alert('Registro exitoso');self.location='bodega.php';</script>";
                 
               }else{
 
-                echo "<script type='text/javascript'>alert('Error de registro');</script>";
+                echo "<script type='text/javascript'>alert('Error de registro');self.location='bodega.php';</script>";
               }
 
+          }else{
 
-            
+            echo "<script type='text/javascript'>alert('Error, la cantidad ingresada no es valida');self.location='bodega.php';</script>";
+
           }
+            
+        }
 
 
           if (isset($_POST['pdf'])) {
@@ -118,6 +314,7 @@ session_start();//Iniciamos session
             
             
             }
+
   require_once('vista/vistabodega.php');
 
 

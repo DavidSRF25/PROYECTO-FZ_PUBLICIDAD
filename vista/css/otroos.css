@@ -1,0 +1,30 @@
+.enviar{
+
+    background: blue;
+    color: white;
+}
+.detalles{
+
+    background: #2697FF;
+    color: white;
+    border: 1px rgb(25, 128, 224) solid;
+    font-size: 14px;
+    padding: 2px;
+    margin-top: 5%;
+
+}
+
+
+
+
+.idpedido{
+
+    width: 80%;
+}
+
+#tabla_uno{
+
+
+    margin-left:20%;
+}
+

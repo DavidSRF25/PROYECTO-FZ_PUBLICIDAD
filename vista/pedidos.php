@@ -4,11 +4,10 @@
   <head>
     <meta charset="UTF-8">
     <title>Pedidos</title>
-    <link rel="stylesheet" href="./vista/css/pedidos.css">
-    <link rel="stylesheet" href="./vista/css/otros.css">
-    <link rel="stylesheet" href="./vista/css/ped.css">
-    <link rel="stylesheet" href="./vista/css/otro.css">
+    <link rel="stylesheet" href="./vista/css/pedid_menu.css">
+    <link rel="stylesheet" href="./vista/css/otroos.css">
     <link rel="stylesheet" href="./vista/css/nuevo.css">
+    <link rel="stylesheet" href="./vista/css/formularioo.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,12 +18,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-    
+    <script type="text/javascript">
+
+
+        function registrar(){
+          var respuesta = confirm("¿Deseas registrar el pedido?");
+
+          if(respuesta ==true){
+
+            return true;
+          }else {
+
+            return false;
+          }
+        }
+
+
+        function actua(){
+          var respuesta = confirm("¿Estas seguro que deseas actualizar el pedido?");
+
+          if(respuesta ==true){
+
+            return true;
+          }else {
+
+            return false;
+          }
+        }
+
+
+        </script>
    </head>
 <body>
   <div class="sidebar">
     <div class="logo-details">
-    <img src="img/logo.pNg" class="logofz"></a>
+            <img src="img/logo.png" class="logofz">
             <div class="logo_name">FZ PUBLICIDAD</div>
     </div>
       <ul class="nav-links">
@@ -86,6 +114,14 @@
                 <span class="tooltip">PRODUCTOS</span>
             </li>
             <li>
+                <a href="proveedor.php">
+                <i class="fas fa-dolly"></i>
+                    <span class="links_name">PROVEEDORES</span>
+
+                </a>
+                <span class="tooltip">PROVEEDORES</span>
+            </li>
+            <li>
             <a href="#">
             <form action="login.php" method="post">
                 
@@ -107,12 +143,9 @@
      
       </div>
       <div class="profile-details">
-      
-              
-        <img src="img/<?php echo  $fotito ?>" alt="">
-        
-        <span class="admin_name"><?php echo  $usuarion ?></span>
-       
+       <img src="img/<?php echo  $fotito ?>"  alt="">
+        <span class="admin_name"><?php echo $usuarion ?></span>
+        <i class='bx bx-chevron-down' ></i>
       </div>
     </nav>
 
@@ -126,17 +159,12 @@
 
          <?php if($clientes){
              ?>
-          <table>
+          <table id="tabla_uno">
                <tr>
        
                    <th>ID </th>
-                   <th>ID Producto</th>
-                   <th>Cantidad</th>
-                   <th>Valor unitario</th>
-                   <th>Valor total</th>
-                   <th>Tamaño</th>
-                   <th>Color</th>
-                   
+                   <th>Documento cliente</th>
+                   <th>Total</th>
                    <th>Fecha compra</th>
 
                </tr>
@@ -149,26 +177,28 @@
                    <td><?php echo $f[1]; ?></td>
                    <td><?php echo $f[2]; ?></td>
                    <td><?php echo $f[3]; ?></td>
-                   <td><?php echo $f[4]; ?></td>
-                   <td><?php echo $f[5]; ?></td>
-                   <td><?php echo $f[6]; ?></td>
-                   <td><?php echo $f[7]; ?></td>
-                   <td><?php echo $f[8]; ?></td>
-            
-
+                   <td><form method="post">
+                        <input type="hidden" name="dato" value="<?php echo $f[0]; ?>">
+                        <input type="submit" name="de" value="Detalles"  class="detalles">
+                   </form></td>
                </tr>
-               </tbody>
-               <?php 
+              
+             <?php 
                  }
             }
+            
           ?>
-            </table>
+           </tbody>
+              
+              </table>
+          
+            
           
           </div>
-         
-        
+            
+            
         </div>
-
+            
         <div class="top-sales box">
           <div class="title">ASIGNAR PEDIDO OPERARIO</div>
           
@@ -186,42 +216,227 @@
                 }
           ?>
             </select>
-            <label>ID Entrega Material</label>
-            <select name="idma" class="idoperario">
-                    <option value="0">Seleccione</option>
-                    <?php if($bodega)
-                    
-                    foreach($bodega as $f){ {
-             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>)</option>
-                     <?php 
-                 }
-                }
-          ?>
-
-            </select>
+            
             <label>ID Operario</label>
             <select name="idoperario" class="idoperario">
                     <option value="0">Seleccione</option>
                     <?php if($operarios)
                     
                     foreach($operarios as $f){ {
-             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>)</option>
+             ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>, <?php echo $f[0]; ?>)</option>
                      <?php 
                  }
                 }
           ?>
 
             </select>
-            <input type="submit" name="enviar" class="envio" value="Registrar">
+            <input type="submit" name="enviar" class="envio" value="Registrar" onclick="return registrar()">
 
 
 
             </form>
-          
+                <br>
+                <br>
+               <center><h3>ACTUALIZAR PEDIDO</h3></center>
+               <br>
+            <form method="POST">
+
+                  <label>ID </label>
+                  <select name="ida" class="idpedido">
+                          <option value="0">Seleccione</option>
+                          <?php if($asignados)
+                          
+                          foreach($asignados as $f){ {
+                  ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[0]; ?></option>
+                          <?php 
+                      }
+                      }
+                  ?>
+                  </select>
+                  <label>ID Pedido</label>
+                  <select name="idpedidoa" class="idpedido">
+                          <option value="0">Seleccione</option>
+                          <?php if($clientes)
+                          
+                          foreach($clientes as $f){ {
+                  ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[0]; ?></option>
+                          <?php 
+                      }
+                      }
+                  ?>
+                  </select>
+                  
+                  <label>ID Operario</label>
+                  <select name="idoperarioa" class="idoperario">
+                          <option value="0">Seleccione</option>
+                          <?php if($operarios)
+                          
+                          foreach($operarios as $f){ {
+                  ?>     <option value="<?php echo $f[0]; ?>"><?php echo $f[1]; ?> (<?php echo $f[3]; ?>, <?php echo $f[0]; ?>)</option>
+                          <?php 
+                      }
+                      }
+                  ?>
+
+                  </select>
+                  <input type="submit" name="actualizar" class="envio" value="Actulizar" onclick="return actua()">
+
+
+
+            </form>
+
 
         </div>
       </div>  
 
+        <?php 
+          if(isset($_POST['de'])){ 
+
+        ?>
+    <div class="home-content">
+    <div class="sales-boxes">
+        
+        <div class="recent-sales box">
+          <div class="title">DETALLES DE LOS PEDIDOS CLIENTES</div>
+          <br>
+          <div class="sales-details">
+
+         <?php if($detalles){
+             ?>
+          <table >
+               <tr>
+       
+                   <th>ID Pedido </th>
+                   <th>ID Producto</th>
+                   <th>Cantidad</th>
+                   <th>Valor unitario</th>
+                   <th>Valor Total</th>
+                   <th>Tamaño</th>
+                   <th>Color</th>
+                   <th>Logo</th>
+                   <th>Producto</th>
+
+
+               </tr>
+               <tbody>
+               <?php 
+              foreach($detalles as $f){
+                   ?>
+               <tr>
+                   <td><?php echo $f[0]; ?></td>
+                   <td><?php echo $f[1]; ?></td>
+                   <td><?php echo $f[2]; ?></td>
+                   <td><?php echo $f[3]; ?></td>
+                   <td><?php echo $f[4]; ?></td>
+                   <td><?php echo $f[5]; ?></td>
+                   <td><?php echo $f[6]; ?></td>
+                   <td><img src="img/<?php echo $f[7]; ?>" alt="" width="60" height="60"></td>
+                   <td><img src="img/<?php echo $f[8]; ?>" alt="" width="60" height="60"></td>
+
+               </tr>
+               </tbody>
+              <?php 
+                 }
+            }
+          ?>
+            </table>
+             
+          
+            
+          
+          </div>
+            
+            
+        </div>
+       
+      </div>  
+        <?php
+          }
+        ?>  
+        
+      <br>
+      <div class="sales-boxes">
+        
+        <div class="recent-sales box">
+          <div class="title">PEDIDOS ASIGNADOS</div>
+          <br>
+          <div class="sales-details">
+
+         <?php if($asignados){
+             ?>
+          <table class="tablaasignada">
+               <tr>
+       
+                   <th>ID</th>
+                   <th>ID Pedido</th>
+                   <th>Documento Operario</th>
+                   
+               </tr>
+               <tbody>
+               <?php 
+              foreach($asignados as $f){
+                   ?>
+               <tr>
+                   <td><?php echo $f[0]; ?></td>
+                   <td><?php echo $f[1]; ?></td>
+                   <td><?php echo $f[2]; ?></td>
+
+               
+
+
+
+               </tr>
+               </tbody>
+               <?php 
+                 }
+            }
+          ?>
+            </table>
+          
+          </div>
+         
+        
+        </div>
+
+        <div class="top-sales box">
+          <div class="title">PEDIDOS FINALIZADOS</div>
+          
+            <br>
+         <?php if($fin){
+             ?>
+          <table>
+               <tr>
+       
+                   <th>ID Pedido</th>
+                   <th>ID Producto</th>
+                   <th>Documento Cliente</th>
+                   <th>Estado</th>
+
+               </tr>
+               <tbody>
+               <?php 
+              foreach($fin as $f){
+                   ?>
+               <tr>
+                   <td><?php echo $f[0]; ?></td>
+                   <td><?php echo $f[1]; ?></td>
+                   <td><?php echo $f[2]; ?></td>
+                   <td><?php echo $f[3]; ?></td>
+
+
+
+               </tr>
+               </tbody>
+               <?php 
+                 }
+            }
+          ?>
+            </table>
+          
+
+        </div>
+      </div>
+      <br>
       <div class="sales-boxes">
         
         <div class="recent-sales box">
@@ -274,89 +489,13 @@
         
         </div>
 
-        <div class="top-sales box">
-          <div class="title">PEDIDOS FINALIZADOS</div>
-          
-            <br>
-         <?php if($fin){
-             ?>
-          <table>
-               <tr>
-       
-                   <th>ID Pedido</th>
-                   <th>ID Producto</th>
-                   <th>Estado</th>
-
-               </tr>
-               <tbody>
-               <?php 
-              foreach($fin as $f){
-                   ?>
-               <tr>
-                   <td><?php echo $f[0]; ?></td>
-                   <td><?php echo $f[1]; ?></td>
-                   <td><?php echo $f[2]; ?></td>
-                   <td><form action="" method="POST">
-                   <input type="hidden" value="<?php echo $f[0];?>" name="Criterio">
-                   <input type="submit" name="detalles" value="detalles" class="detalles">             
-                       </form> 
-                    </td>
-
-
-
-               </tr>
-               </tbody>
-               <?php 
-                 }
-            }
-          ?>
-            </table>
-          
-
-        </div>
-      </div>
-            <br>
-
-      <?php    
-      
-        if(isset($_POST['detalles'])){
-
-        ?>
-       <div class="sales-boxes">
-        <div class="recent-sales box">
-         
-          <br>
-          <div class="sales-details">
-
-          <?php 
-              foreach($deta as $f){
-                   ?>
-          <form  class="informacion" >
-
-            <label class="label1">ID:  <?php echo $f[0];?></label><br><br>
-            <label class="label2">IDProducto: <?php echo $f[1];?></label><br><br>
-            <label class="label3">Cantidad: <?php echo $f[2];?></label><br><br>
-            <label class="label4">Valor Unitario: <?php echo $f[3];?></label><br><br>
-            <label class="label5">Valor total: <?php echo $f[4];?></label><br><br>
-            <label class="label6">Tamaño: <?php echo $f[5];?></label><br><br>
-            <label class="label7">Color: <?php echo $f[6];?></label><br><br>
-            <label class="label8">Logo:</label> <img src="img/<?php echo $f[7]; ?>" alt="" width="60" height="60"><br><br>
-            <label class="label9">Documento Cliente: <?php echo $f[8];?></label><br><br>
-            <label class="label10">Fecha compra: <?php echo $f[9];?></label><br><br>
-            
-     
-          </form>
-          <?php 
-                 }
-            
-          ?>
-        </div>
-        <?php 
         
-          }
-        ?>
+            <br>
+
+     
     </div>
 
+  
    
   </section>
   

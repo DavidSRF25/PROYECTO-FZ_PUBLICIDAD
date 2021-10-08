@@ -1,12 +1,9 @@
 <?php
 
-session_start();//Iniciamos session
-  $usuarion= $_SESSION['usuario'];
-   $ape=$_SESSION['apellido'];
-   $oficio= $_SESSION['Oficio'];
-   $fotito=$_SESSION['foto'];
-   $doc=$_SESSION['doc'];
-   $fecha=$_SESSION['fecha'];
+session_start();
+
+  $nombre=$_SESSION['usuario'];
+  $foto= $_SESSION['foto'];
 
     require_once('modelo/modeloClientes.php');
 
